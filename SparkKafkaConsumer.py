@@ -3,7 +3,9 @@
 # /opt/mapr/spark/spark-3.3.3/bin/pyspark --packages org.apache.iceberg:iceberg-spark-runtime-3.3_2.12:1.4.2
 
 # to deploy
-
+# /opt/mapr/spark/spark-3.3.3/bin/spark-submit --name harshalstream1 --packages org.apache.iceberg:iceberg-spark-runtime-3.3_2.12:1.4.2 ./SparkKafkaConsumer.py&
+# default mode is client deployment so deployed on the machine - note down the PID - kill <PID> to stop it
+# for cluster mode - will need to use yarn applications command to identify and kill the application
 
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, LongType, DoubleType, IntegerType, ArrayType
@@ -14,7 +16,7 @@ from pyspark.sql.functions import col, from_json
 
 spark = SparkSession \
 .builder \
-.appName("File Streaming Demo") \
+.appName("Kafka Streaming to Iceberg Demo") \
 .config("spark.streaming.stopGracefullyOnShutdown", "true") \
 .config("spark.sql.extensions", "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions") \
 .config("spark.sql.catalog.local", "org.apache.iceberg.spark.SparkCatalog") \
@@ -102,7 +104,7 @@ output_df.printSchema()
 
 
 
-write_query = output_df.writeStream.format("iceberg").outputMode("append").trigger(processingTime="59 seconds").option("checkpointLocation", "maprfs:///test/chkpoint").toTable("local.default.kafka_ingest3")
+write_query = output_df.writeStream.format("iceberg").outputMode("append").trigger(processingTime="30 seconds").option("checkpointLocation", "maprfs:///test/chkpoint").toTable("local.default.kafka_ingest3").awaitTermination()
 #write_query = output_df.writeStream.format("iceberg").outputMode("append").trigger(processingTime="59 seconds").option("checkpointLocation", "/mapr/ez-anz-df/test/chkpoint").toTable("local.default.kafka_ingest2")
 # ctl-c to terminate
 
