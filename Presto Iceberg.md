@@ -1,16 +1,17 @@
 
-#: EZPresto Iceberg Operations
-###: This document shows query operations with EZPresto 
+# EZPresto Iceberg Operations
+### This document shows query operations with EZPresto 
 
 
-####: Read the file ingested via Python Producer to Kafka to Spark Structured Streaming to EDF / Iceberg to UA Presto
-####: UA 1.5 Presto connector: https://prestodb.io/docs/0.287/connector/iceberg.html
+#### Read the file ingested via Python Producer to Kafka to Spark Structured Streaming to EDF / Iceberg to UA Presto
+#### UA 1.5 Presto connector: https://prestodb.io/docs/0.287/connector/iceberg.html
 
 
 
 Check streaming counts are ok. After each ingestion the counts will keep increasing.
 '''SQL
-select count(*) as num_records from dficeberg.default.kafka_ingest3'''
+select count(*) as num_records from dficeberg.default.kafka_ingest3
+'''
 
 
 Check select works on the stream ingest table
