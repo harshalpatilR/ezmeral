@@ -8,6 +8,8 @@
 select count(*) as num_records from dficeberg.default.kafka_ingest3
 ```
 
+![Count output](images/iceberg_counts.jpg)
+
 ###### 2. Check select works on the stream ingest table
 ```sql
 select * from dficeberg.default.kafka_ingest3
