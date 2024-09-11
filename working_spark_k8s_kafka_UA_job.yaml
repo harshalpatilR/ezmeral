@@ -1,0 +1,86 @@
+apiVersion: sparkoperator.hpe.com/v1beta2
+kind: SparkApplication
+metadata:
+  creationTimestamp: 2024-09-06T08:10:55Z
+  generation: 1
+  labels:
+    hpe-ezua/app: spark
+    hpe-ezua/type: app-service-user
+    sidecar.istio.io/inject: "false"
+  name: pkf8
+  namespace: harshal-f34d94fc
+  resourceVersion: "36243035"
+  uid: 61200d35-9a47-4042-a2fd-40a87f677167
+spec:
+  deps:
+    jars:
+      - local:///mounts/shared-volume/shared/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar
+      - local:///mounts/shared-volume/shared/jars/kafka-clients-2.6.1.jar
+      - local:///mounts/shared-volume/shared/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar
+      - local:///mounts/shared-volume/shared/jars/commons-pool2-2.11.1.jar
+  driver:
+    coreLimit: "1"
+    cores: 1
+    labels:
+      version: 3.5.1
+    memory: 4g
+    serviceAccount: hpe-harshal-f34d94fc
+    volumeMounts:
+      - mountPath: /opt/mapr/spark/sparkhs-eventlog-storage
+        name: sparkhs-eventlog-storage
+      - mountPath: /mounts/shared-volume/user
+        name: upv1
+      - mountPath: /mounts/shared-volume/shared
+        name: pv1
+  executor:
+    coreLimit: "1"
+    cores: 1
+    instances: 1
+    labels:
+      version: 3.5.1
+    memory: 4g
+    volumeMounts:
+      - mountPath: /mounts/shared-volume/user
+        name: upv1
+      - mountPath: /mounts/shared-volume/shared
+        name: pv1
+  image: gcr.io/mapr-252711/apache-spark:3.5.1-py
+  imagePullPolicy: Always
+  imagePullSecrets:
+    - imagepull
+  mainApplicationFile: local:///mounts/shared-volume/shared/harshal/sparkconsumerbasic.py
+  mode: cluster
+  restartPolicy:
+    type: Never
+  sparkConf:
+    spark.eventLog.dir: file:///opt/mapr/spark/sparkhs-eventlog-storage
+    spark.eventLog.enabled: "true"
+    spark.executorEnv.SPARK_USER: harshal
+    spark.kubernetes.driverEnv.SPARK_USER: harshal
+    spark.mapr.user.secret: hpe-autotix-generated-secret-eucaov
+    spark.mapr.user.secret.autogen: "true"
+  sparkVersion: 3.5.1
+  type: Python
+  volumes:
+    - name: sparkhs-eventlog-storage
+      persistentVolumeClaim:
+        claimName: harshal-f34d94fc-sparkhs-pvc
+    - name: upv1
+      persistentVolumeClaim:
+        claimName: user-pvc
+    - name: pv1
+      persistentVolumeClaim:
+        claimName: kubeflow-shared-pvc
+status:
+  applicationState:
+    state: RUNNING
+  driverInfo:
+    podName: pkf8-driver
+  executionAttempts: 1
+  executorState:
+    file-streaming-demo-c8a82391c6636268-exec-1: RUNNING
+  sparkApplicationId: spark-20e4c0ffd8c4425584354b12b3e64c6f
+  submissionAttempts: 1
+  submissionID: 89cefc9a-241e-411e-b4d5-38965e9ec760
+  submissionTime: 2024-09-06T08:11:19Z
+  terminationTime: null
