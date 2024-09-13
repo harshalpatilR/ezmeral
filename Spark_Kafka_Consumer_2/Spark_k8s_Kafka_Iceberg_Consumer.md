@@ -38,8 +38,18 @@
 
 ###### 8. Iceberg Table in S3 bucket - Commits
 
-![EDF S3 Iceberg Table Checkpoints](images/S3iceberg_checkpoints.png)
+![EDF S3 Iceberg Table Commits](images/S3iceberg_commits.png)
 
+###### 9. Presto connected to Iceberg Table in S3 bucket
 
+![Presto S3 Iceberg Table](images/Presto_reads_S3_table.png)
+
+###### 10. Presto connected to Iceberg Table in S3 bucket - read Iceberg Snapshots present in table
+
+![Presto S3 Iceberg Snapshots](images/Presto_Iceberg_snapshots_S3table.png)
+
+###### 11. Presto connected to Iceberg Table in S3 bucket - Select data from Iceberg table
+
+![Presto S3 Iceberg Select](images/Presto_iceberg_S3table_select.png)
 
 
