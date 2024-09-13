@@ -64,4 +64,6 @@
 
 ![Superset Dashboard](images/superset-dashboard-streamingKPI.png)
 
+<br>
 
+![Superset Dashboard](images/realtime_update_superset_dashboard.png)
