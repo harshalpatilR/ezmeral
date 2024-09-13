@@ -10,8 +10,6 @@
 
 ###### 1. Running Spark on K8s Consumer via Ezmeral Unified Analytics (UA) UI
 
-<br>
-
 ![UA Spark](images/UAspark_stream_app_running.png) 
 
 ###### 2. Spark History Server view of running Streaming Application
