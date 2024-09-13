@@ -52,4 +52,16 @@
 
 ![Presto S3 Iceberg Select](images/Presto_iceberg_S3table_select.png)
 
+###### 12. Superset connected to Presto which is in-turn connected to Iceberg Table in S3 bucket
+
+![Superset to Presto](images/superset-to-Presto-icebergS3.png)
+
+###### 13. Superset can query to Presto which is in-turn connected to Iceberg Table in S3 bucket
+
+![Superset to Presto Query Iceberg](images/superset-query-S3iceberg.png)
+
+###### 14. Superset Real-Time Dashboard - KPIs update each 30 second based on Streaming Data 
+
+![Superset Dashboard](images/superset-dashboard-streamingKPI.png)
+
 
