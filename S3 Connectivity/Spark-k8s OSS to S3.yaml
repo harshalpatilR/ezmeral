@@ -1,0 +1,98 @@
+apiVersion: sparkoperator.hpe.com/v1beta2
+kind: SparkApplication
+metadata:
+  creationTimestamp: 2024-09-13T04:53:17Z
+  generation: 1
+  labels:
+    hpe-ezua/app: spark
+    hpe-ezua/type: app-service-user
+    sidecar.istio.io/inject: "false"
+  name: hpkf18
+  namespace: harshal-f34d94fc
+  resourceVersion: "46591975"
+  uid: 975e3a5d-bbdd-4484-85fe-0a4a31681882
+spec:
+  deps:
+    jars:
+      - local:///mounts/shared-volume/shared/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar
+      - local:///mounts/shared-volume/shared/jars/kafka-clients-2.6.1.jar
+      - local:///mounts/shared-volume/shared/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar
+      - local:///mounts/shared-volume/shared/jars/commons-pool2-2.11.1.jar
+      - local:///mounts/shared-volume/shared/jars/iceberg-spark-runtime-3.5_2.12-1.6.0.jar
+  driver:
+    coreLimit: "1"
+    cores: 1
+    labels:
+      version: 3.5.1
+    memory: 4g
+    serviceAccount: hpe-harshal-f34d94fc
+    volumeMounts:
+      - mountPath: /opt/mapr/spark/sparkhs-eventlog-storage
+        name: sparkhs-eventlog-storage
+      - mountPath: /mounts/shared-volume/user
+        name: upv1
+      - mountPath: /mounts/shared-volume/shared
+        name: pv1
+  executor:
+    coreLimit: "1"
+    cores: 1
+    instances: 1
+    labels:
+      version: 3.5.1
+    memory: 4g
+    volumeMounts:
+      - mountPath: /mounts/shared-volume/user
+        name: upv1
+      - mountPath: /mounts/shared-volume/shared
+        name: pv1
+  image: gcr.io/mapr-252711/apache-spark:3.5.1-py
+  imagePullPolicy: Always
+  imagePullSecrets:
+    - imagepull
+  mainApplicationFile: local:///mounts/shared-volume/shared/harshal/readcsv_S3proxy.py
+  mode: cluster
+  restartPolicy:
+    type: Never
+  sparkConf:
+    spark.driver.extraJavaOptions: -Dcom.amazonaws.sdk.disableCertChecking
+    spark.eventLog.dir: file:///opt/mapr/spark/sparkhs-eventlog-storage
+    spark.eventLog.enabled: "true"
+    spark.executor.extraJavaOptions: -Dcom.amazonaws.sdk.disableCertChecking
+    spark.executorEnv.AWS_ACCESS_KEY_ID: <xx>
+    spark.executorEnv.AWS_SECRET_ACCESS_KEY: <xx>
+    spark.executorEnv.SPARK_USER: harshal
+    spark.hadoop.fs.s3a.connection.ssl.enabled: "true"
+    spark.hadoop.fs.s3a.endpoint: https://<IP>:9000
+    spark.hadoop.fs.s3a.impl: org.apache.hadoop.fs.s3a.S3AFileSystem
+    spark.hadoop.fs.s3a.path.style.access: "true"
+    spark.kubernetes.driverEnv.AWS_ACCESS_KEY_ID: <xx>
+    spark.kubernetes.driverEnv.AWS_SECRET_ACCESS_KEY: <xx>
+    spark.kubernetes.driverEnv.SPARK_USER: harshal
+    spark.mapr.extraconf.secret: spark-s3-secret
+    spark.mapr.user.secret: hpe-autotix-generated-secret-yybcbr
+    spark.mapr.user.secret.autogen: "true"
+  sparkVersion: 3.5.1
+  type: Python
+  volumes:
+    - name: sparkhs-eventlog-storage
+      persistentVolumeClaim:
+        claimName: harshal-f34d94fc-sparkhs-pvc
+    - name: upv1
+      persistentVolumeClaim:
+        claimName: user-pvc
+    - name: pv1
+      persistentVolumeClaim:
+        claimName: kubeflow-shared-pvc
+status:
+  applicationState:
+    state: COMPLETED
+  driverInfo:
+    podName: hpkf18-driver
+  executionAttempts: 1
+  executorState:
+    readcsvfroms3proxy-52fe6591e9baf2e6-exec-1: COMPLETED
+  sparkApplicationId: spark-3ea4cc2488c448d6ad04ec970d56138d
+  submissionAttempts: 1
+  submissionID: fe3c5f7c-0bc8-4430-9fb2-dc6d8d60f475
+  submissionTime: 2024-09-13T04:53:41Z
+  terminationTime: 2024-09-13T04:54:17Z
