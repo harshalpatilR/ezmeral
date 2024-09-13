@@ -1,0 +1,452 @@
+++ id -u
++ myuid=185
+++ id -g
++ mygid=0
++ set +e
+++ getent passwd 185
++ uidentry=
++ set -e
++ '[' -z '' ']'
++ '[' -w /etc/passwd ']'
++ echo '185:x:185:0:anonymous uid:/opt/spark:/bin/false'
++ '[' -z /opt/java/openjdk ']'
++ SPARK_CLASSPATH=':/opt/spark/jars/*'
++ env
++ grep SPARK_JAVA_OPT_
++ sort -t_ -k4 -n
++ sed 's/[^=]*=\(.*\)/\1/g'
+++ command -v readarray
++ '[' readarray ']'
++ readarray -t SPARK_EXECUTOR_JAVA_OPTS
++ '[' -n '' ']'
++ '[' -z ']'
++ '[' -z ']'
++ '[' -n '' ']'
++ '[' -z ']'
++ '[' -z x ']'
++ SPARK_CLASSPATH='/opt/spark/conf::/opt/spark/jars/*'
++ SPARK_CLASSPATH='/opt/spark/conf::/opt/spark/jars/*:/opt/spark/work-dir'
++ case "$1" in
++ shift 1
++ CMD=("$SPARK_HOME/bin/spark-submit" --conf "spark.driver.bindAddress=$SPARK_DRIVER_BIND_ADDRESS" --conf "spark.executorEnv.SPARK_DRIVER_POD_IP=$SPARK_DRIVER_BIND_ADDRESS" --deploy-mode client "$@")
++ exec /usr/bin/tini -s -- /opt/spark/bin/spark-submit --conf spark.driver.bindAddress=10.224.118.196 --conf spark.executorEnv.SPARK_DRIVER_POD_IP=10.224.118.196 --deploy-mode client --properties-file /opt/spark/conf/spark.properties --class org.apache.spark.deploy.PythonRunner local:///mounts/shared-volume/shared/harshal/testsparkS3iceberg.py
+Files local:///mounts/shared-volume/shared/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar from /mounts/shared-volume/shared/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar to /opt/spark/work-dir/spark-sql-kafka-0-10_2.12-3.5.1.jar
+Files local:///mounts/shared-volume/shared/jars/kafka-clients-2.6.1.jar from /mounts/shared-volume/shared/jars/kafka-clients-2.6.1.jar to /opt/spark/work-dir/kafka-clients-2.6.1.jar
+Files local:///mounts/shared-volume/shared/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar from /mounts/shared-volume/shared/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar to /opt/spark/work-dir/spark-token-provider-kafka-0-10_2.12-3.5.1.jar
+Files local:///mounts/shared-volume/shared/jars/commons-pool2-2.11.1.jar from /mounts/shared-volume/shared/jars/commons-pool2-2.11.1.jar to /opt/spark/work-dir/commons-pool2-2.11.1.jar
+Files local:///mounts/shared-volume/shared/jars/iceberg-spark-runtime-3.5_2.12-1.6.0.jar from /mounts/shared-volume/shared/jars/iceberg-spark-runtime-3.5_2.12-1.6.0.jar to /opt/spark/work-dir/iceberg-spark-runtime-3.5_2.12-1.6.0.jar
+24/09/13 06:20:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+/opt/spark/work-dir
+['..2024_09_13_06_20_17.2972292311', '..data', 'spark.properties']
+['HikariCP-2.5.1.jar', 'JLargeArrays-1.5.jar', 'JTransforms-3.1.jar', 'RoaringBitmap-0.9.45.jar', 'ST4-4.0.4.jar', 'activation-1.1.1.jar', 'aircompressor-0.26.jar', 'algebra_2.12-2.0.1.jar', 'aliyun-java-sdk-core-4.5.10.jar', 'aliyun-java-sdk-kms-2.11.0.jar', 'aliyun-java-sdk-ram-3.1.0.jar', 'aliyun-sdk-oss-3.13.0.jar', 'annotations-17.0.0.jar', 'antlr-runtime-3.5.2.jar', 'antlr4-runtime-4.9.3.jar', 'aopalliance-repackaged-2.6.1.jar', 'arpack-3.0.3.jar', 'arpack_combined_all-0.1.jar', 'arrow-format-12.0.1.jar', 'arrow-memory-core-12.0.1.jar', 'arrow-memory-netty-12.0.1.jar', 'arrow-vector-12.0.1.jar', 'audience-annotations-0.5.0.jar', 'avro-1.11.2.jar', 'avro-ipc-1.11.2.jar', 'avro-mapred-1.11.2.jar', 'aws-java-sdk-bundle-1.12.262.jar', 'azure-data-lake-store-sdk-2.3.9.jar', 'azure-keyvault-core-1.0.0.jar', 'azure-storage-7.0.1.jar', 'blas-3.0.3.jar', 'bonecp-0.8.0.RELEASE.jar', 'breeze-macros_2.12-2.1.0.jar', 'breeze_2.12-2.1.0.jar', 'cats-kernel_2.12-2.1.1.jar', 'chill-java-0.10.0.jar', 'chill_2.12-0.10.0.jar', 'commons-cli-1.5.0.jar', 'commons-codec-1.16.0.jar', 'commons-collections-3.2.2.jar', 'commons-collections4-4.4.jar', 'commons-compiler-3.1.9.jar', 'commons-compress-1.23.0.jar', 'commons-crypto-1.1.0.jar', 'commons-dbcp-1.4.jar', 'commons-io-2.13.0.jar', 'commons-lang-2.6.jar', 'commons-lang3-3.12.0.jar', 'commons-logging-1.1.3.jar', 'commons-math3-3.6.1.jar', 'commons-pool-1.5.4.jar', 'commons-text-1.10.0.jar', 'compress-lzf-1.1.2.jar', 'curator-client-2.13.0.jar', 'curator-framework-2.13.0.jar', 'curator-recipes-2.13.0.jar', 'datanucleus-api-jdo-4.2.4.jar', 'datanucleus-core-4.1.17.jar', 'datanucleus-rdbms-4.1.19.jar', 'datasketches-java-3.3.0.jar', 'datasketches-memory-2.1.0.jar', 'derby-10.14.2.0.jar', 'dropwizard-metrics-hadoop-metrics2-reporter-0.1.2.jar', 'flatbuffers-java-1.12.0.jar', 'gcs-connector-hadoop3-2.2.14-shaded.jar', 'gson-2.2.4.jar', 'guava-14.0.1.jar', 'hadoop-aliyun-3.3.4.jar', 'hadoop-annotations-3.3.4.jar', 'hadoop-aws-3.3.4.jar', 'hadoop-azure-3.3.4.jar', 'hadoop-azure-datalake-3.3.4.jar', 'hadoop-client-api-3.3.4.jar', 'hadoop-client-runtime-3.3.4.jar', 'hadoop-cloud-storage-3.3.4.jar', 'hadoop-openstack-3.3.4.jar', 'hadoop-shaded-guava-1.1.1.jar', 'hive-common-2.3.9.jar', 'hive-exec-2.3.9-core.jar', 'hive-llap-common-2.3.9.jar', 'hive-metastore-2.3.9.jar', 'hive-serde-2.3.9.jar', 'hive-shims-0.23-2.3.9.jar', 'hive-shims-2.3.9.jar', 'hive-shims-common-2.3.9.jar', 'hive-shims-scheduler-2.3.9.jar', 'hive-storage-api-2.8.1.jar', 'hk2-api-2.6.1.jar', 'hk2-locator-2.6.1.jar', 'hk2-utils-2.6.1.jar', 'httpclient-4.5.14.jar', 'httpcore-4.4.16.jar', 'ini4j-0.5.4.jar', 'istack-commons-runtime-3.0.8.jar', 'ivy-2.5.1.jar', 'jackson-annotations-2.15.2.jar', 'jackson-core-2.15.2.jar', 'jackson-core-asl-1.9.13.jar', 'jackson-databind-2.15.2.jar', 'jackson-dataformat-cbor-2.15.2.jar', 'jackson-dataformat-yaml-2.15.2.jar', 'jackson-datatype-jsr310-2.15.2.jar', 'jackson-mapper-asl-1.9.13.jar', 'jackson-module-scala_2.12-2.15.2.jar', 'jakarta.annotation-api-1.3.5.jar', 'jakarta.inject-2.6.1.jar', 'jakarta.servlet-api-4.0.3.jar', 'jakarta.validation-api-2.0.2.jar', 'jakarta.ws.rs-api-2.1.6.jar', 'jakarta.xml.bind-api-2.3.2.jar', 'janino-3.1.9.jar', 'javassist-3.29.2-GA.jar', 'javax.jdo-3.2.0-m3.jar', 'javolution-5.5.1.jar', 'jaxb-api-2.2.11.jar', 'jaxb-runtime-2.3.2.jar', 'jcl-over-slf4j-2.0.7.jar', 'jdo-api-3.0.1.jar', 'jdom2-2.0.6.jar', 'jersey-client-2.40.jar', 'jersey-common-2.40.jar', 'jersey-container-servlet-2.40.jar', 'jersey-container-servlet-core-2.40.jar', 'jersey-hk2-2.40.jar', 'jersey-server-2.40.jar', 'jettison-1.1.jar', 'jetty-util-9.4.52.v20230823.jar', 'jetty-util-ajax-9.4.52.v20230823.jar', 'jline-2.14.6.jar', 'joda-time-2.12.5.jar', 'jodd-core-3.5.2.jar', 'json-1.8.jar', 'json4s-ast_2.12-3.7.0-M11.jar', 'json4s-core_2.12-3.7.0-M11.jar', 'json4s-jackson_2.12-3.7.0-M11.jar', 'json4s-scalap_2.12-3.7.0-M11.jar', 'jsr305-3.0.0.jar', 'jta-1.1.jar', 'jul-to-slf4j-2.0.7.jar', 'kryo-shaded-4.0.2.jar', 'kubernetes-client-6.7.2.jar', 'kubernetes-client-api-6.7.2.jar', 'kubernetes-httpclient-okhttp-6.7.2.jar', 'kubernetes-model-admissionregistration-6.7.2.jar', 'kubernetes-model-apiextensions-6.7.2.jar', 'kubernetes-model-apps-6.7.2.jar', 'kubernetes-model-autoscaling-6.7.2.jar', 'kubernetes-model-batch-6.7.2.jar', 'kubernetes-model-certificates-6.7.2.jar', 'kubernetes-model-common-6.7.2.jar', 'kubernetes-model-coordination-6.7.2.jar', 'kubernetes-model-core-6.7.2.jar', 'kubernetes-model-discovery-6.7.2.jar', 'kubernetes-model-events-6.7.2.jar', 'kubernetes-model-extensions-6.7.2.jar', 'kubernetes-model-flowcontrol-6.7.2.jar', 'kubernetes-model-gatewayapi-6.7.2.jar', 'kubernetes-model-metrics-6.7.2.jar', 'kubernetes-model-networking-6.7.2.jar', 'kubernetes-model-node-6.7.2.jar', 'kubernetes-model-policy-6.7.2.jar', 'kubernetes-model-rbac-6.7.2.jar', 'kubernetes-model-resource-6.7.2.jar', 'kubernetes-model-scheduling-6.7.2.jar', 'kubernetes-model-storageclass-6.7.2.jar', 'lapack-3.0.3.jar', 'leveldbjni-all-1.8.jar', 'libfb303-0.9.3.jar', 'libthrift-0.12.0.jar', 'log4j-1.2-api-2.20.0.jar', 'log4j-api-2.20.0.jar', 'log4j-core-2.20.0.jar', 'log4j-slf4j2-impl-2.20.0.jar', 'logging-interceptor-3.12.12.jar', 'lz4-java-1.8.0.jar', 'metrics-core-4.2.19.jar', 'metrics-graphite-4.2.19.jar', 'metrics-jmx-4.2.19.jar', 'metrics-json-4.2.19.jar', 'metrics-jvm-4.2.19.jar', 'minlog-1.3.0.jar', 'netty-all-4.1.96.Final.jar', 'netty-buffer-4.1.96.Final.jar', 'netty-codec-4.1.96.Final.jar', 'netty-codec-http-4.1.96.Final.jar', 'netty-codec-http2-4.1.96.Final.jar', 'netty-codec-socks-4.1.96.Final.jar', 'netty-common-4.1.96.Final.jar', 'netty-handler-4.1.96.Final.jar', 'netty-handler-proxy-4.1.96.Final.jar', 'netty-resolver-4.1.96.Final.jar', 'netty-transport-4.1.96.Final.jar', 'netty-transport-classes-epoll-4.1.96.Final.jar', 'netty-transport-classes-kqueue-4.1.96.Final.jar', 'netty-transport-native-epoll-4.1.96.Final-linux-aarch_64.jar', 'netty-transport-native-epoll-4.1.96.Final-linux-x86_64.jar', 'netty-transport-native-kqueue-4.1.96.Final-osx-aarch_64.jar', 'netty-transport-native-kqueue-4.1.96.Final-osx-x86_64.jar', 'netty-transport-native-unix-common-4.1.96.Final.jar', 'objenesis-3.3.jar', 'okhttp-3.12.12.jar', 'okio-1.15.0.jar', 'opencsv-2.3.jar', 'opentracing-api-0.33.0.jar', 'opentracing-noop-0.33.0.jar', 'opentracing-util-0.33.0.jar', 'orc-core-1.9.2-shaded-protobuf.jar', 'orc-mapreduce-1.9.2-shaded-protobuf.jar', 'orc-shims-1.9.2.jar', 'oro-2.0.8.jar', 'osgi-resource-locator-1.0.3.jar', 'paranamer-2.8.jar', 'parquet-column-1.13.1.jar', 'parquet-common-1.13.1.jar', 'parquet-encoding-1.13.1.jar', 'parquet-format-structures-1.13.1.jar', 'parquet-hadoop-1.13.1.jar', 'parquet-jackson-1.13.1.jar', 'pickle-1.3.jar', 'py4j-0.10.9.7.jar', 'rocksdbjni-8.3.2.jar', 'scala-collection-compat_2.12-2.7.0.jar', 'scala-compiler-2.12.18.jar', 'scala-library-2.12.18.jar', 'scala-parser-combinators_2.12-2.3.0.jar', 'scala-reflect-2.12.18.jar', 'scala-xml_2.12-2.1.0.jar', 'shims-0.9.45.jar', 'slf4j-api-2.0.7.jar', 'snakeyaml-2.0.jar', 'snakeyaml-engine-2.6.jar', 'snappy-java-1.1.10.3.jar', 'spark-catalyst_2.12-3.5.1.jar', 'spark-common-utils_2.12-3.5.1.jar', 'spark-core_2.12-3.5.1.jar', 'spark-graphx_2.12-3.5.1.jar', 'spark-hadoop-cloud_2.12-3.5.1.jar', 'spark-hive_2.12-3.5.1.jar', 'spark-kubernetes_2.12-3.5.1.jar', 'spark-kvstore_2.12-3.5.1.jar', 'spark-launcher_2.12-3.5.1.jar', 'spark-mllib-local_2.12-3.5.1.jar', 'spark-mllib_2.12-3.5.1.jar', 'spark-network-common_2.12-3.5.1.jar', 'spark-network-shuffle_2.12-3.5.1.jar', 'spark-repl_2.12-3.5.1.jar', 'spark-sketch_2.12-3.5.1.jar', 'spark-sql-api_2.12-3.5.1.jar', 'spark-sql_2.12-3.5.1.jar', 'spark-streaming_2.12-3.5.1.jar', 'spark-tags_2.12-3.5.1.jar', 'spark-unsafe_2.12-3.5.1.jar', 'spire-macros_2.12-0.17.0.jar', 'spire-platform_2.12-0.17.0.jar', 'spire-util_2.12-0.17.0.jar', 'spire_2.12-0.17.0.jar', 'stax-api-1.0.1.jar', 'stream-2.9.6.jar', 'threeten-extra-1.7.1.jar', 'tink-1.9.0.jar', 'transaction-api-1.1.jar', 'univocity-parsers-2.9.1.jar', 'wildfly-openssl-1.0.7.Final.jar', 'xbean-asm9-shaded-4.23.jar', 'xz-1.9.jar', 'zjsonpatch-0.3.0.jar', 'zookeeper-3.6.3.jar', 'zookeeper-jute-3.6.3.jar', 'zstd-jni-1.5.5-4.jar']
+['java_opts.txt', 'spark-sql-kafka-0-10_2.12-3.5.1.jar', 'kafka-clients-2.6.1.jar', 'spark-token-provider-kafka-0-10_2.12-3.5.1.jar', 'commons-pool2-2.11.1.jar', 'iceberg-spark-runtime-3.5_2.12-1.6.0.jar']
+24/09/13 06:20:27 INFO SparkContext: Running Spark version 3.5.1
+24/09/13 06:20:27 INFO SparkContext: OS info Linux, 4.18.0-477.15.1.el8_8.x86_64, amd64
+24/09/13 06:20:27 INFO SparkContext: Java version 17.0.11
+24/09/13 06:20:27 INFO ResourceUtils: ==============================================================
+24/09/13 06:20:27 INFO ResourceUtils: No custom resources configured for spark.driver.
+24/09/13 06:20:27 INFO ResourceUtils: ==============================================================
+24/09/13 06:20:27 INFO SparkContext: Submitted application: HarshalIngestDemoS3
+24/09/13 06:20:27 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+24/09/13 06:20:27 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+24/09/13 06:20:27 INFO ResourceProfileManager: Added ResourceProfile id: 0
+24/09/13 06:20:27 INFO SecurityManager: Changing view acls to: 185,harshal
+24/09/13 06:20:27 INFO SecurityManager: Changing modify acls to: 185,harshal
+24/09/13 06:20:27 INFO SecurityManager: Changing view acls groups to: 
+24/09/13 06:20:27 INFO SecurityManager: Changing modify acls groups to: 
+24/09/13 06:20:27 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: 185, harshal; groups with view permissions: EMPTY; users with modify permissions: 185, harshal; groups with modify permissions: EMPTY
+24/09/13 06:20:27 INFO Utils: Successfully started service 'sparkDriver' on port 7078.
+24/09/13 06:20:27 INFO SparkEnv: Registering MapOutputTracker
+24/09/13 06:20:27 INFO SparkEnv: Registering BlockManagerMaster
+24/09/13 06:20:27 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+24/09/13 06:20:27 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+24/09/13 06:20:27 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+24/09/13 06:20:27 INFO DiskBlockManager: Created local directory at /var/data/spark-52ff4cb1-db2e-4f09-9754-de1c8012f486/blockmgr-178bd4ed-1556-4a32-89ee-ba0f94ec9910
+24/09/13 06:20:27 INFO MemoryStore: MemoryStore started with capacity 2.1 GiB
+24/09/13 06:20:27 INFO SparkEnv: Registering OutputCommitCoordinator
+24/09/13 06:20:28 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+24/09/13 06:20:28 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+24/09/13 06:20:28 INFO SparkContext: Added JAR local:/mounts/shared-volume/shared/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar at file:/mounts/shared-volume/shared/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar with timestamp 1726208427399
+24/09/13 06:20:28 INFO SparkContext: Added JAR local:/mounts/shared-volume/shared/jars/kafka-clients-2.6.1.jar at file:/mounts/shared-volume/shared/jars/kafka-clients-2.6.1.jar with timestamp 1726208427399
+24/09/13 06:20:28 INFO SparkContext: Added JAR local:/mounts/shared-volume/shared/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar at file:/mounts/shared-volume/shared/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar with timestamp 1726208427399
+24/09/13 06:20:28 INFO SparkContext: Added JAR local:/mounts/shared-volume/shared/jars/commons-pool2-2.11.1.jar at file:/mounts/shared-volume/shared/jars/commons-pool2-2.11.1.jar with timestamp 1726208427399
+24/09/13 06:20:28 INFO SparkContext: Added JAR local:/mounts/shared-volume/shared/jars/iceberg-spark-runtime-3.5_2.12-1.6.0.jar at file:/mounts/shared-volume/shared/jars/iceberg-spark-runtime-3.5_2.12-1.6.0.jar with timestamp 1726208427399
+24/09/13 06:20:28 INFO SparkKubernetesClientFactory: Auto-configuring K8S client using current context from users K8S config file
+24/09/13 06:20:29 INFO ExecutorPodsAllocator: Going to request 1 executors from Kubernetes for ResourceProfile Id: 0, target: 1, known: 0, sharedSlotFromPendingPods: 2147483647.
+24/09/13 06:20:29 INFO ExecutorPodsAllocator: Found 0 reusable PVCs from 0 PVCs
+24/09/13 06:20:29 INFO BasicExecutorFeatureStep: Decommissioning not enabled, skipping shutdown script
+24/09/13 06:20:29 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 7079.
+24/09/13 06:20:29 INFO NettyBlockTransferService: Server created on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc 10.224.118.196:7079
+24/09/13 06:20:29 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/09/13 06:20:29 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc, 7079, None)
+24/09/13 06:20:29 INFO BlockManagerMasterEndpoint: Registering block manager strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 with 2.1 GiB RAM, BlockManagerId(driver, strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc, 7079, None)
+24/09/13 06:20:29 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc, 7079, None)
+24/09/13 06:20:29 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc, 7079, None)
+24/09/13 06:20:30 INFO SingleEventLogFileWriter: Logging events to file:/opt/mapr/spark/sparkhs-eventlog-storage/spark-78c0a0c600cc4a1f890c6450d94f36a6.inprogress
+24/09/13 06:20:40 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: No executor found for 10.224.118.255:44234
+24/09/13 06:20:41 INFO KubernetesClusterSchedulerBackend$KubernetesDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.224.118.255:44248) with ID 1,  ResourceProfileId 0
+24/09/13 06:20:41 INFO KubernetesClusterSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+24/09/13 06:20:41 INFO BlockManagerMasterEndpoint: Registering block manager 10.224.118.255:43263 with 2.1 GiB RAM, BlockManagerId(1, 10.224.118.255, 43263, None)
+24/09/13 06:20:41 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+24/09/13 06:20:41 INFO SharedState: Warehouse path is 'file:/opt/spark/work-dir/spark-warehouse'.
+24/09/13 06:20:42 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+24/09/13 06:20:42 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+24/09/13 06:20:42 INFO MetricsSystemImpl: s3a-file-system metrics system started
+24/09/13 06:20:43 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:20:43 INFO CatalogUtil: Loading custom FileIO implementation: org.apache.iceberg.hadoop.HadoopFileIO
+24/09/13 06:20:47 INFO BaseMetastoreCatalog: Table loaded by catalog: local.default.kafka_ingest4
+24/09/13 06:20:47 INFO V2ScanRelationPushDown: 
+Output: id#0L, name#1, address#2, amount#3L
+         
+24/09/13 06:20:47 INFO SnapshotScan: Scanning empty table local.default.kafka_ingest4
+24/09/13 06:20:47 INFO SparkPartitioningAwareScan: Reporting UnknownPartitioning with 0 partition(s) for table local.default.kafka_ingest4
+24/09/13 06:20:47 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 32.0 KiB, free 2.1 GiB)
+24/09/13 06:20:47 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 31.8 KiB, free 2.1 GiB)
+24/09/13 06:20:47 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 (size: 31.8 KiB, free: 2.1 GiB)
+24/09/13 06:20:47 INFO SparkContext: Created broadcast 0 from broadcast at SparkBatch.java:79
+24/09/13 06:20:47 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 32.0 KiB, free 2.1 GiB)
+24/09/13 06:20:47 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 31.8 KiB, free 2.1 GiB)
+24/09/13 06:20:47 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 (size: 31.8 KiB, free: 2.1 GiB)
+24/09/13 06:20:47 INFO SparkContext: Created broadcast 1 from broadcast at SparkBatch.java:79
+24/09/13 06:20:48 INFO CodeGenerator: Code generated in 276.126865 ms
+24/09/13 06:20:48 INFO BlockManagerInfo: Removed broadcast_1_piece0 on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 in memory (size: 31.8 KiB, free: 2.1 GiB)
+24/09/13 06:20:48 INFO BlockManagerInfo: Removed broadcast_0_piece0 on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 in memory (size: 31.8 KiB, free: 2.1 GiB)
++---+----+-------+------+
+| id|name|address|amount|
++---+----+-------+------+
++---+----+-------+------+
+
+root
+ |-- key: binary (nullable = true)
+ |-- value: binary (nullable = true)
+ |-- topic: string (nullable = true)
+ |-- partition: integer (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- timestamp: timestamp (nullable = true)
+ |-- timestampType: integer (nullable = true)
+
+root
+ |-- from_json(CAST(value AS STRING)): struct (nullable = true)
+ |    |-- id: integer (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- address: string (nullable = true)
+ |    |-- amount: integer (nullable = true)
+
+root
+ |-- id: integer (nullable = true)
+ |-- name: string (nullable = true)
+ |-- address: string (nullable = true)
+ |-- amount: integer (nullable = true)
+
+24/09/13 06:20:48 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+24/09/13 06:20:48 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:20:49 INFO ResolveWriteToStream: Checkpoint root s3a://checkpoints/kafka_ingest4 resolved to s3a://checkpoints/kafka_ingest4.
+24/09/13 06:20:49 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+24/09/13 06:20:49 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:20:50 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:20:50 INFO deprecation: org.apache.hadoop.shaded.io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+24/09/13 06:20:52 INFO CheckpointFileManager: Writing atomically to s3a://checkpoints/kafka_ingest4/metadata using temp file s3a://checkpoints/kafka_ingest4/.metadata.6947f77d-aa52-4914-8fe2-99b9248d7428.tmp
+24/09/13 06:20:55 INFO CheckpointFileManager: Renamed temp file s3a://checkpoints/kafka_ingest4/.metadata.6947f77d-aa52-4914-8fe2-99b9248d7428.tmp to s3a://checkpoints/kafka_ingest4/metadata
+24/09/13 06:20:55 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:20:57 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:20:59 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:20:59 INFO MicroBatchExecution: Starting [id = 35378d73-7afb-4e24-b473-5e53d3301af4, runId = f063a67d-825d-4768-b5b3-a04cac32d0d4]. Use s3a://checkpoints/kafka_ingest4 to store the query checkpoint.
+24/09/13 06:20:59 INFO MicroBatchExecution: Reading table [org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable@5ff631e] from DataSourceV2 named 'kafka' [org.apache.spark.sql.kafka010.KafkaSourceProvider@4119ce68]
+24/09/13 06:21:00 INFO OffsetSeqLog: BatchIds found from listing: 
+24/09/13 06:21:00 INFO OffsetSeqLog: BatchIds found from listing: 
+24/09/13 06:21:00 INFO MicroBatchExecution: Starting new streaming query.
+24/09/13 06:21:00 INFO MicroBatchExecution: Stream started from {}
+24/09/13 06:21:00 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:21:03 INFO AdminClientConfig: AdminClientConfig values: 
+	bootstrap.servers = [172.31.37.92:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = PLAIN
+	security.protocol = SASL_PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+24/09/13 06:21:03 INFO AbstractLogin: Successfully logged in.
+24/09/13 06:21:03 WARN AdminClientConfig: The configuration 'key.deserializer' was supplied but isn't a known config.
+24/09/13 06:21:03 WARN AdminClientConfig: The configuration 'value.deserializer' was supplied but isn't a known config.
+24/09/13 06:21:03 WARN AdminClientConfig: The configuration 'enable.auto.commit' was supplied but isn't a known config.
+24/09/13 06:21:03 WARN AdminClientConfig: The configuration 'max.poll.records' was supplied but isn't a known config.
+24/09/13 06:21:03 WARN AdminClientConfig: The configuration 'sasl.jaas.config' was supplied but isn't a known config.
+24/09/13 06:21:03 WARN AdminClientConfig: The configuration 'auto.offset.reset' was supplied but isn't a known config.
+24/09/13 06:21:03 INFO AppInfoParser: Kafka version: 2.6.1
+24/09/13 06:21:03 INFO AppInfoParser: Kafka commitId: 6b2021cd52659cef
+24/09/13 06:21:03 INFO AppInfoParser: Kafka startTimeMs: 1726208463399
+24/09/13 06:21:05 INFO CheckpointFileManager: Writing atomically to s3a://checkpoints/kafka_ingest4/sources/0/0 using temp file s3a://checkpoints/kafka_ingest4/sources/0/.0.d8931bfd-be1a-4cd5-931d-3dfe950ee130.tmp
+24/09/13 06:21:09 INFO CheckpointFileManager: Renamed temp file s3a://checkpoints/kafka_ingest4/sources/0/.0.d8931bfd-be1a-4cd5-931d-3dfe950ee130.tmp to s3a://checkpoints/kafka_ingest4/sources/0/0
+24/09/13 06:21:09 INFO KafkaMicroBatchStream: Initial offsets: {"freshtopic":{"0":1100}}
+24/09/13 06:21:10 INFO CheckpointFileManager: Writing atomically to s3a://checkpoints/kafka_ingest4/offsets/0 using temp file s3a://checkpoints/kafka_ingest4/offsets/.0.7381d37b-6a85-4b39-b658-723109adb453.tmp
+24/09/13 06:21:14 INFO CheckpointFileManager: Renamed temp file s3a://checkpoints/kafka_ingest4/offsets/.0.7381d37b-6a85-4b39-b658-723109adb453.tmp to s3a://checkpoints/kafka_ingest4/offsets/0
+24/09/13 06:21:14 INFO MicroBatchExecution: Committed offsets for batch 0. Metadata OffsetSeqMetadata(0,1726208469470,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.join.stateFormatVersion -> 2, spark.sql.streaming.stateStore.compression.codec -> lz4, spark.sql.streaming.stateStore.rocksdb.formatVersion -> 5, spark.sql.streaming.statefulOperator.useStrictDistribution -> true, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+24/09/13 06:21:14 WARN AmazonHttpClient: SSL Certificate checking for endpoints has been explicitly disabled.
+24/09/13 06:21:16 INFO SparkWrite: Requesting 0 bytes advisory partition size for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO SparkWrite: Requesting UnspecifiedDistribution as write distribution for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO SparkWrite: Requesting [] as write ordering for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:21:16 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:21:16 INFO SparkWrite: Requesting 0 bytes advisory partition size for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO SparkWrite: Requesting UnspecifiedDistribution as write distribution for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO SparkWrite: Requesting [] as write ordering for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:21:16 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:21:16 INFO SparkWrite: Requesting 0 bytes advisory partition size for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO SparkWrite: Requesting UnspecifiedDistribution as write distribution for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO SparkWrite: Requesting [] as write ordering for table local.default.kafka_ingest4
+24/09/13 06:21:16 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:21:16 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:21:16 INFO CodeGenerator: Code generated in 12.977589 ms
+24/09/13 06:21:16 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 32.0 KiB, free 2.1 GiB)
+24/09/13 06:21:16 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 31.8 KiB, free 2.1 GiB)
+24/09/13 06:21:16 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 (size: 31.8 KiB, free: 2.1 GiB)
+24/09/13 06:21:16 INFO SparkContext: Created broadcast 2 from toTable at <unknown>:0
+24/09/13 06:21:16 INFO WriteToDataSourceV2Exec: Start processing data source write support: MicroBatchWrite[epoch: 0, writer: IcebergStreamingWrite(table=local.default.kafka_ingest4, format=PARQUET)]. The input RDD has 1 partitions.
+24/09/13 06:21:16 INFO SparkContext: Starting job: toTable at <unknown>:0
+24/09/13 06:21:16 INFO DAGScheduler: Got job 0 (toTable at <unknown>:0) with 1 output partitions
+24/09/13 06:21:16 INFO DAGScheduler: Final stage: ResultStage 0 (toTable at <unknown>:0)
+24/09/13 06:21:16 INFO DAGScheduler: Parents of final stage: List()
+24/09/13 06:21:16 INFO DAGScheduler: Missing parents: List()
+24/09/13 06:21:16 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[7] at toTable at <unknown>:0), which has no missing parents
+24/09/13 06:21:16 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 25.0 KiB, free 2.1 GiB)
+24/09/13 06:21:16 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 11.6 KiB, free 2.1 GiB)
+24/09/13 06:21:16 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 (size: 11.6 KiB, free: 2.1 GiB)
+24/09/13 06:21:16 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1585
+24/09/13 06:21:16 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[7] at toTable at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+24/09/13 06:21:16 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+24/09/13 06:21:16 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (10.224.118.255, executor 1, partition 0, PROCESS_LOCAL, 9347 bytes) 
+24/09/13 06:21:16 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.224.118.255:43263 (size: 11.6 KiB, free: 2.1 GiB)
+24/09/13 06:21:17 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.224.118.255:43263 (size: 31.8 KiB, free: 2.1 GiB)
+24/09/13 06:21:23 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 7358 ms on 10.224.118.255 (executor 1) (1/1)
+24/09/13 06:21:23 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+24/09/13 06:21:23 INFO DAGScheduler: ResultStage 0 (toTable at <unknown>:0) finished in 7.544 s
+24/09/13 06:21:23 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+24/09/13 06:21:23 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+24/09/13 06:21:23 INFO DAGScheduler: Job 0 finished: toTable at <unknown>:0, took 7.567734 s
+24/09/13 06:21:23 INFO WriteToDataSourceV2Exec: Data source write support MicroBatchWrite[epoch: 0, writer: IcebergStreamingWrite(table=local.default.kafka_ingest4, format=PARQUET)] is committing.
+24/09/13 06:21:23 INFO SparkWrite: Committing epoch 0 for query 35378d73-7afb-4e24-b473-5e53d3301af4 in append mode
+24/09/13 06:21:25 INFO SparkWrite: Committing streaming append with 1 new data files to table local.default.kafka_ingest4
+24/09/13 06:21:31 INFO HadoopTableOperations: Committed a new metadata file s3a://icebergdata/warehouse/default/kafka_ingest4/metadata/v2.metadata.json
+24/09/13 06:21:33 INFO SnapshotProducer: Committed snapshot 3739026803572810220 (FastAppend)
+24/09/13 06:21:36 INFO LoggingMetricsReporter: Received metrics report: CommitReport{tableName=local.default.kafka_ingest4, snapshotId=3739026803572810220, sequenceNumber=1, operation=append, commitMetrics=CommitMetricsResult{totalDuration=TimerResult{timeUnit=NANOSECONDS, totalDuration=PT11.166055348S, count=1}, attempts=CounterResult{unit=COUNT, value=1}, addedDataFiles=CounterResult{unit=COUNT, value=1}, removedDataFiles=null, totalDataFiles=CounterResult{unit=COUNT, value=1}, addedDeleteFiles=null, addedEqualityDeleteFiles=null, addedPositionalDeleteFiles=null, removedDeleteFiles=null, removedEqualityDeleteFiles=null, removedPositionalDeleteFiles=null, totalDeleteFiles=CounterResult{unit=COUNT, value=0}, addedRecords=CounterResult{unit=COUNT, value=1300}, removedRecords=null, totalRecords=CounterResult{unit=COUNT, value=1300}, addedFilesSizeInBytes=CounterResult{unit=BYTES, value=46149}, removedFilesSizeInBytes=null, totalFilesSizeInBytes=CounterResult{unit=BYTES, value=46149}, addedPositionalDeletes=null, removedPositionalDeletes=null, totalPositionalDeletes=CounterResult{unit=COUNT, value=0}, addedEqualityDeletes=null, removedEqualityDeletes=null, totalEqualityDeletes=CounterResult{unit=COUNT, value=0}}, metadata={engine-version=3.5.1, app-id=spark-78c0a0c600cc4a1f890c6450d94f36a6, engine-name=spark, iceberg-version=Apache Iceberg 1.6.0 (commit 229d8f6fcd109e6c8943ea7cbb41dab746c6d0ed)}}
+24/09/13 06:21:36 INFO SparkWrite: Committed in 11175 ms
+24/09/13 06:21:36 INFO WriteToDataSourceV2Exec: Data source write support MicroBatchWrite[epoch: 0, writer: IcebergStreamingWrite(table=local.default.kafka_ingest4, format=PARQUET)] committed.
+24/09/13 06:21:37 INFO CheckpointFileManager: Writing atomically to s3a://checkpoints/kafka_ingest4/commits/0 using temp file s3a://checkpoints/kafka_ingest4/commits/.0.31f9b114-e5f4-460e-aa81-0396db3cdfe3.tmp
+24/09/13 06:21:41 INFO CheckpointFileManager: Renamed temp file s3a://checkpoints/kafka_ingest4/commits/.0.31f9b114-e5f4-460e-aa81-0396db3cdfe3.tmp to s3a://checkpoints/kafka_ingest4/commits/0
+24/09/13 06:21:41 INFO MicroBatchExecution: Streaming query made progress: {
+  "id" : "35378d73-7afb-4e24-b473-5e53d3301af4",
+  "runId" : "f063a67d-825d-4768-b5b3-a04cac32d0d4",
+  "name" : null,
+  "timestamp" : "2024-09-13T06:20:59.540Z",
+  "batchId" : 0,
+  "numInputRows" : 1300,
+  "inputRowsPerSecond" : 0.0,
+  "processedRowsPerSecond" : 30.848817066514798,
+  "durationMs" : {
+    "addBatch" : 20278,
+    "commitOffsets" : 5209,
+    "getBatch" : 1355,
+    "latestOffset" : 8766,
+    "queryPlanning" : 117,
+    "triggerExecution" : 42140,
+    "walCommit" : 5245
+  },
+  "stateOperators" : [ ],
+  "sources" : [ {
+    "description" : "KafkaV2[Subscribe[freshtopic]]",
+    "startOffset" : null,
+    "endOffset" : {
+      "freshtopic" : {
+        "0" : 2400
+      }
+    },
+    "latestOffset" : {
+      "freshtopic" : {
+        "0" : 2400
+      }
+    },
+    "numInputRows" : 1300,
+    "inputRowsPerSecond" : 0.0,
+    "processedRowsPerSecond" : 30.848817066514798,
+    "metrics" : {
+      "avgOffsetsBehindLatest" : "0.0",
+      "maxOffsetsBehindLatest" : "0",
+      "minOffsetsBehindLatest" : "0"
+    }
+  } ],
+  "sink" : {
+    "description" : "local.default.kafka_ingest4",
+    "numOutputRows" : 1300
+  }
+}
+24/09/13 06:21:41 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 30000 milliseconds, but spent 42162 milliseconds
+24/09/13 06:22:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:22:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:23:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:23:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:24:01 INFO CheckpointFileManager: Writing atomically to s3a://checkpoints/kafka_ingest4/offsets/1 using temp file s3a://checkpoints/kafka_ingest4/offsets/.1.42610edc-a6d0-488d-a01f-97a57bc9846f.tmp
+24/09/13 06:24:05 INFO CheckpointFileManager: Renamed temp file s3a://checkpoints/kafka_ingest4/offsets/.1.42610edc-a6d0-488d-a01f-97a57bc9846f.tmp to s3a://checkpoints/kafka_ingest4/offsets/1
+24/09/13 06:24:05 INFO MicroBatchExecution: Committed offsets for batch 1. Metadata OffsetSeqMetadata(0,1726208640007,Map(spark.sql.streaming.stateStore.providerClass -> org.apache.spark.sql.execution.streaming.state.HDFSBackedStateStoreProvider, spark.sql.streaming.join.stateFormatVersion -> 2, spark.sql.streaming.stateStore.compression.codec -> lz4, spark.sql.streaming.stateStore.rocksdb.formatVersion -> 5, spark.sql.streaming.statefulOperator.useStrictDistribution -> true, spark.sql.streaming.flatMapGroupsWithState.stateFormatVersion -> 2, spark.sql.streaming.multipleWatermarkPolicy -> min, spark.sql.streaming.aggregation.stateFormatVersion -> 2, spark.sql.shuffle.partitions -> 200))
+24/09/13 06:24:05 INFO SparkWrite: Requesting 0 bytes advisory partition size for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO SparkWrite: Requesting UnspecifiedDistribution as write distribution for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO SparkWrite: Requesting [] as write ordering for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:24:05 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:24:05 INFO SparkWrite: Requesting 0 bytes advisory partition size for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO SparkWrite: Requesting UnspecifiedDistribution as write distribution for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO SparkWrite: Requesting [] as write ordering for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:24:05 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:24:05 INFO SparkWrite: Requesting 0 bytes advisory partition size for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO SparkWrite: Requesting UnspecifiedDistribution as write distribution for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO SparkWrite: Requesting [] as write ordering for table local.default.kafka_ingest4
+24/09/13 06:24:05 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:24:05 INFO KafkaOffsetReaderAdmin: Partitions added: Map()
+24/09/13 06:24:05 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 32.0 KiB, free 2.1 GiB)
+24/09/13 06:24:05 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 31.9 KiB, free 2.1 GiB)
+24/09/13 06:24:05 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 (size: 31.9 KiB, free: 2.1 GiB)
+24/09/13 06:24:05 INFO SparkContext: Created broadcast 4 from toTable at <unknown>:0
+24/09/13 06:24:05 INFO WriteToDataSourceV2Exec: Start processing data source write support: MicroBatchWrite[epoch: 1, writer: IcebergStreamingWrite(table=local.default.kafka_ingest4, format=PARQUET)]. The input RDD has 1 partitions.
+24/09/13 06:24:05 INFO SparkContext: Starting job: toTable at <unknown>:0
+24/09/13 06:24:05 INFO DAGScheduler: Got job 1 (toTable at <unknown>:0) with 1 output partitions
+24/09/13 06:24:05 INFO DAGScheduler: Final stage: ResultStage 1 (toTable at <unknown>:0)
+24/09/13 06:24:05 INFO DAGScheduler: Parents of final stage: List()
+24/09/13 06:24:05 INFO DAGScheduler: Missing parents: List()
+24/09/13 06:24:05 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[11] at toTable at <unknown>:0), which has no missing parents
+24/09/13 06:24:05 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 25.0 KiB, free 2.1 GiB)
+24/09/13 06:24:05 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 11.6 KiB, free 2.1 GiB)
+24/09/13 06:24:05 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on strm2-9d4ec091ea0a0372-driver-svc.harshal-f34d94fc.svc:7079 (size: 11.6 KiB, free: 2.1 GiB)
+24/09/13 06:24:05 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1585
+24/09/13 06:24:05 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[11] at toTable at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+24/09/13 06:24:05 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+24/09/13 06:24:05 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (10.224.118.255, executor 1, partition 0, PROCESS_LOCAL, 9347 bytes) 
+24/09/13 06:24:05 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.224.118.255:43263 (size: 11.6 KiB, free: 2.1 GiB)
+24/09/13 06:24:05 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.224.118.255:43263 (size: 31.9 KiB, free: 2.1 GiB)
+24/09/13 06:24:07 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 1784 ms on 10.224.118.255 (executor 1) (1/1)
+24/09/13 06:24:07 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+24/09/13 06:24:07 INFO DAGScheduler: ResultStage 1 (toTable at <unknown>:0) finished in 1.788 s
+24/09/13 06:24:07 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+24/09/13 06:24:07 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+24/09/13 06:24:07 INFO DAGScheduler: Job 1 finished: toTable at <unknown>:0, took 1.790742 s
+24/09/13 06:24:07 INFO WriteToDataSourceV2Exec: Data source write support MicroBatchWrite[epoch: 1, writer: IcebergStreamingWrite(table=local.default.kafka_ingest4, format=PARQUET)] is committing.
+24/09/13 06:24:07 INFO SparkWrite: Committing epoch 1 for query 35378d73-7afb-4e24-b473-5e53d3301af4 in append mode
+24/09/13 06:24:09 INFO SparkWrite: Committing streaming append with 1 new data files to table local.default.kafka_ingest4
+24/09/13 06:24:14 INFO HadoopTableOperations: Committed a new metadata file s3a://icebergdata/warehouse/default/kafka_ingest4/metadata/v3.metadata.json
+24/09/13 06:24:17 INFO SnapshotProducer: Committed snapshot 4916490306707268746 (FastAppend)
+24/09/13 06:24:20 INFO LoggingMetricsReporter: Received metrics report: CommitReport{tableName=local.default.kafka_ingest4, snapshotId=4916490306707268746, sequenceNumber=2, operation=append, commitMetrics=CommitMetricsResult{totalDuration=TimerResult{timeUnit=NANOSECONDS, totalDuration=PT11.029893088S, count=1}, attempts=CounterResult{unit=COUNT, value=1}, addedDataFiles=CounterResult{unit=COUNT, value=1}, removedDataFiles=null, totalDataFiles=CounterResult{unit=COUNT, value=2}, addedDeleteFiles=null, addedEqualityDeleteFiles=null, addedPositionalDeleteFiles=null, removedDeleteFiles=null, removedEqualityDeleteFiles=null, removedPositionalDeleteFiles=null, totalDeleteFiles=CounterResult{unit=COUNT, value=0}, addedRecords=CounterResult{unit=COUNT, value=100}, removedRecords=null, totalRecords=CounterResult{unit=COUNT, value=1400}, addedFilesSizeInBytes=CounterResult{unit=BYTES, value=5758}, removedFilesSizeInBytes=null, totalFilesSizeInBytes=CounterResult{unit=BYTES, value=51907}, addedPositionalDeletes=null, removedPositionalDeletes=null, totalPositionalDeletes=CounterResult{unit=COUNT, value=0}, addedEqualityDeletes=null, removedEqualityDeletes=null, totalEqualityDeletes=CounterResult{unit=COUNT, value=0}}, metadata={engine-version=3.5.1, app-id=spark-78c0a0c600cc4a1f890c6450d94f36a6, engine-name=spark, iceberg-version=Apache Iceberg 1.6.0 (commit 229d8f6fcd109e6c8943ea7cbb41dab746c6d0ed)}}
+24/09/13 06:24:20 INFO SparkWrite: Committed in 11030 ms
+24/09/13 06:24:20 INFO WriteToDataSourceV2Exec: Data source write support MicroBatchWrite[epoch: 1, writer: IcebergStreamingWrite(table=local.default.kafka_ingest4, format=PARQUET)] committed.
+24/09/13 06:24:21 INFO CheckpointFileManager: Writing atomically to s3a://checkpoints/kafka_ingest4/commits/1 using temp file s3a://checkpoints/kafka_ingest4/commits/.1.2a8d73ec-a2a3-45c8-a823-eee773532201.tmp
+24/09/13 06:24:25 INFO CheckpointFileManager: Renamed temp file s3a://checkpoints/kafka_ingest4/commits/.1.2a8d73ec-a2a3-45c8-a823-eee773532201.tmp to s3a://checkpoints/kafka_ingest4/commits/1
+24/09/13 06:24:25 INFO MicroBatchExecution: Streaming query made progress: {
+  "id" : "35378d73-7afb-4e24-b473-5e53d3301af4",
+  "runId" : "f063a67d-825d-4768-b5b3-a04cac32d0d4",
+  "name" : null,
+  "timestamp" : "2024-09-13T06:24:00.000Z",
+  "batchId" : 1,
+  "numInputRows" : 100,
+  "inputRowsPerSecond" : 3.3333333333333335,
+  "processedRowsPerSecond" : 3.8812342324859306,
+  "durationMs" : {
+    "addBatch" : 14628,
+    "commitOffsets" : 5545,
+    "getBatch" : 0,
+    "latestOffset" : 7,
+    "queryPlanning" : 14,
+    "triggerExecution" : 25765,
+    "walCommit" : 5570
+  },
+  "stateOperators" : [ ],
+  "sources" : [ {
+    "description" : "KafkaV2[Subscribe[freshtopic]]",
+    "startOffset" : {
+      "freshtopic" : {
+        "0" : 2400
+      }
+    },
+    "endOffset" : {
+      "freshtopic" : {
+        "0" : 2500
+      }
+    },
+    "latestOffset" : {
+      "freshtopic" : {
+        "0" : 2500
+      }
+    },
+    "numInputRows" : 100,
+    "inputRowsPerSecond" : 3.3333333333333335,
+    "processedRowsPerSecond" : 3.8812342324859306,
+    "metrics" : {
+      "avgOffsetsBehindLatest" : "0.0",
+      "maxOffsetsBehindLatest" : "0",
+      "minOffsetsBehindLatest" : "0"
+    }
+  } ],
+  "sink" : {
+    "description" : "local.default.kafka_ingest4",
+    "numOutputRows" : 100
+  }
+}
+24/09/13 06:25:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:25:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:26:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:26:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:27:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:27:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:28:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:28:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:29:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:29:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:30:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:30:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:31:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:31:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:32:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:32:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:33:00 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
+24/09/13 06:33:30 INFO MicroBatchExecution: Streaming query has been idle and waiting for new data more than 10000 ms.
