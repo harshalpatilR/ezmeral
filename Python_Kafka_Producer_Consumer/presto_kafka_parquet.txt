@@ -1,0 +1,8 @@
+Name: kafkaparquet
+Connector: Hive
+Type: Discovery
+Directory: file:///data/shared/ingest1
+
+test queries:
+select * from kafkaparquet.default.source1 limit 100
+select count(*) from kafkaparquet.default.source1
