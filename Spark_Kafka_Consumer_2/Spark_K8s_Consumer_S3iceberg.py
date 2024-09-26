@@ -26,8 +26,8 @@ spark = SparkSession \
 .getOrCreate()
         
 #ingest table 
-spark.sql("CREATE TABLE IF NOT EXISTS local.default.kafka_ingest4 (id bigint, name varchar(100), address varchar(500), amount bigint)")
-spark.sql("select * from local.default.kafka_ingest4 limit 10").show()
+spark.sql("CREATE TABLE IF NOT EXISTS local.default.kafka_ingest5 (id bigint, name varchar(100), address varchar(500), amount bigint)")
+spark.sql("select * from local.default.kafka_ingest5 limit 10").show()
 
 schema = StructType([StructField("id", IntegerType()),
 StructField("name", StringType()),
@@ -36,10 +36,10 @@ StructField("amount", IntegerType())
 ])
 
 options = {
-    "kafka.sasl.jaas.config": 'org.apache.kafka.common.security.plain.PlainLoginModule required username="mapr" password="mapr";',
-    "kafka.sasl.mechanism": "PLAIN",
-    "kafka.security.protocol" : "SASL_PLAINTEXT",
-    "kafka.bootstrap.servers": "172.31.37.92:9092",
+#    "kafka.sasl.jaas.config": 'org.apache.kafka.common.security.plain.PlainLoginModule required username="mapr" password="mapr";',
+#    "kafka.sasl.mechanism": "PLAIN",
+#    "kafka.security.protocol" : "SASL_PLAINTEXT",
+    "kafka.bootstrap.servers": "13.215.254.242:9092",
     "subscribe": "freshtopic",
     "startingOffsets": "earliest"}
 
@@ -59,4 +59,4 @@ output_df.printSchema()
 
 #write_query = output_df.writeStream.format("console").outputMode("append").trigger(processingTime="30 seconds").start().awaitTermination()
 
-write_query = output_df.writeStream.format("iceberg").outputMode("append").trigger(processingTime="30 seconds").option("checkpointLocation", "s3a://checkpoints/kafka_ingest4").toTable("local.default.kafka_ingest4").awaitTermination()
+write_query = output_df.writeStream.format("iceberg").outputMode("append").trigger(processingTime="30 seconds").option("checkpointLocation", "s3a://checkpoints/kafka_ingest5").toTable("local.default.kafka_ingest5").awaitTermination()
