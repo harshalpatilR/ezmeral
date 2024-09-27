@@ -17,12 +17,8 @@ spec:
       version: '{{dag_run.conf["spark_image_version"]}}'
     memory: "4g"
     volumeMounts:
-      - mountPath: /mounts/shared-volume/user
-        name: upv1
       - mountPath: /mounts/shared-volume/shared
-        name: pv1
-      - mountPath: /opt/mapr/spark/sparkhs-eventlog-storage
-        name: sparkhs-eventlog-storage
+        name: shared-volume
   executor:
     coreLimit: "1"
     cores: 1
@@ -31,10 +27,8 @@ spec:
       version: '{{dag_run.conf["spark_image_version"]}}'
     memory: "4g"
     volumeMounts:
-      - mountPath: /mounts/shared-volume/user
-        name: upv1
       - mountPath: /mounts/shared-volume/shared
-        name: pv1
+        name: shared-volume
   image: '{{dag_run.conf["spark_image_url"]|default("", True)}}'
   imagePullPolicy: Always
   imagePullSecrets:
