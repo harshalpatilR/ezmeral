@@ -1,0 +1,59 @@
+apiVersion: "sparkoperator.hpe.com/v1beta2"
+kind: SparkApplication
+metadata:
+  name: spark-stream-iceberg-{{ts_nodash|replace("T", "")}}
+spec:
+  deps:
+    jars:
+      - local:///mounts/shared-volume/shared/jars/spark-sql-kafka-0-10_2.12-3.5.1.jar
+      - local:///mounts/shared-volume/shared/jars/kafka-clients-2.6.1.jar
+      - local:///mounts/shared-volume/shared/jars/spark-token-provider-kafka-0-10_2.12-3.5.1.jar
+      - local:///mounts/shared-volume/shared/jars/commons-pool2-2.11.1.jar
+      - local:///mounts/shared-volume/shared/jars/iceberg-spark-runtime-3.5_2.12-1.6.0.jar
+  driver:
+    coreLimit: "1"
+    cores: 1
+    labels:
+      version: '{{dag_run.conf["spark_image_version"]}}'
+    memory: "4g"
+    volumeMounts:
+      - mountPath: /mounts/shared-volume/user
+        name: upv1
+      - mountPath: /mounts/shared-volume/shared
+        name: pv1
+      - mountPath: /opt/mapr/spark/sparkhs-eventlog-storage
+        name: sparkhs-eventlog-storage
+  executor:
+    coreLimit: "1"
+    cores: 1
+    instances: 1
+    labels:
+      version: '{{dag_run.conf["spark_image_version"]}}'
+    memory: "4g"
+    volumeMounts:
+      - mountPath: /mounts/shared-volume/user
+        name: upv1
+      - mountPath: /mounts/shared-volume/shared
+        name: pv1
+  image: '{{dag_run.conf["spark_image_url"]|default("", True)}}'
+  imagePullPolicy: Always
+  imagePullSecrets:
+    - imagepull
+  mainApplicationFile: '{{dag_run.conf["app_file"]}}'
+  mode: cluster
+  restartPolicy:
+    type: Never
+  sparkConf:
+    spark.driver.extraJavaOptions: -Dcom.amazonaws.sdk.disableCertChecking
+    spark.executor.extraJavaOptions: -Dcom.amazonaws.sdk.disableCertChecking
+    spark.executorEnv.AWS_ACCESS_KEY_ID: '{{dag_run.conf["s3_access_key"]}}'
+    spark.executorEnv.AWS_SECRET_ACCESS_KEY: '{{dag_run.conf["s3_secret_key"]}}'
+    spark.hadoop.fs.s3a.connection.ssl.enabled: "true"
+    spark.hadoop.fs.s3a.endpoint: '{{dag_run.conf["s3_endpoint"]}}'
+    spark.hadoop.fs.s3a.impl: org.apache.hadoop.fs.s3a.S3AFileSystem
+    spark.hadoop.fs.s3a.path.style.access: "true"
+    spark.kubernetes.driverEnv.AWS_ACCESS_KEY_ID: '{{dag_run.conf["s3_access_key"]}}'
+    spark.kubernetes.driverEnv.AWS_SECRET_ACCESS_KEY: '{{dag_run.conf["s3_secret_key"]}}'
+  sparkVersion: '{{dag_run.conf["spark_image_version"]}}'
+  type: Python
+ 
