@@ -3,10 +3,11 @@ from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 import subprocess
 import venv
+import os
 
 def create_virtualenv(venv_path):
     """Creates a virtual environment if it doesn't exist."""
-    if not venv.exists(venv_path):
+    if not os.path.exists(venv_path):
         venv.create(venv_path, clear=True)
         print(f"Virtual environment created at {venv_path}")
 
