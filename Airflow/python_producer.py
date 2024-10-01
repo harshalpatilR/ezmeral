@@ -15,7 +15,7 @@ def create_virtualenv(venv_path):
 def activate_virtualenv(venv_path):
     """Activates the specified virtual environment."""
     activate_script = venv_path + "/bin" + "/activate"
-    output = subprocess.run([str(activate_script)], shell=True, check=False)
+    output = subprocess.run(["source", str(activate_script)], shell=True, check=False)
     print(output)
     print(f"Virtual environment activated at {venv_path}")
 
