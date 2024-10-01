@@ -35,9 +35,9 @@ def run_python_script(script_path):
     subprocess.run(["python", script_path], check=True)
     print(f"Python script {script_path} executed successfully")
 
-dag_venv_path = "/mnt/shared/shared/airflow/pyenv1"
-dag_code_path = "/mnt/shared/shared/airflow-jobs/pytest.py"
-dag_req_path = "/mnt/shared/shared/airflow-jobs/req1.txt"
+dag_venv_path = "/mnt/shared/airflow/pyenv1"
+dag_code_path = "/mnt/shared/airflow-jobs/pytest.py"
+dag_req_path = "/mnt/shared/airflow-jobs/req1.txt"
 
 with DAG(
     dag_id="virtualenv_and_python_script",
