@@ -9,7 +9,7 @@ def create_virtualenv(venv_path):
     """Creates a virtual environment if it doesn't exist."""
     if not os.path.exists(venv_path):
         #venv.create(venv_path, clear=True)
-        subprocess.run(["python". "-m", "venv", venv_path], capture_output=True, shell=True, check=True)
+        subprocess.run(["python", "-m", "venv", venv_path], capture_output=True, shell=True, check=True)
         print(f"Virtual environment created at {venv_path}")
 
 def activate_virtualenv(venv_path):
