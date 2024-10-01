@@ -13,7 +13,7 @@ def create_virtualenv(venv_path):
 
 def activate_virtualenv(venv_path):
     """Activates the specified virtual environment."""
-    activate_script = venv_path / "bin" / "activate"
+    activate_script = venv_path + "/bin" + "/activate"
     subprocess.run([str(activate_script)], shell=True, check=True)
     print(f"Virtual environment activated at {venv_path}")
 
@@ -24,9 +24,9 @@ def deactivate_virtualenv():
 
 def install_packages(venv_path, requirements_file):
     """Installs Python packages from a requirements.txt file within the activated virtual environment."""
-    activate_script = venv_path / "bin" / "activate"
+    activate_script = venv_path + "/bin" + "/activate"
     subprocess.run([str(activate_script)], shell=True, check=True)
-    subprocess.run([venv_path / "bin" / "pip", "install", "-r", requirements_file], check=True)
+    subprocess.run([venv_path + "/bin" + "/pip", "install", "-r", requirements_file], check=True)
     print(f"Packages from {requirements_file} installed successfully in {venv_path}")    
 
 def run_python_script(script_path):
