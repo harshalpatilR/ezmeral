@@ -108,12 +108,12 @@ with DAG(
     access_control={"All": {"can_read", "can_edit", "can_delete"}},
 ) as dag:
 
-     virtualenv_task = PythonVirtualenvOperator(
-            task_id="virtualenv_python_kafka_producer",
-            python_callable=generate_kafka_records,
-            requirements=["kafka-python==2.0.2","Faker==28.0.0"],
-            system_site_packages=False,
-        )
+    virtualenv_task = PythonVirtualenvOperator(
+        task_id="virtualenv_python_kafka_producer",
+        python_callable=generate_kafka_records,
+        requirements=["kafka-python==2.0.2","Faker==28.0.0"],
+        system_site_packages=False,
+    )
 
 
 
