@@ -64,7 +64,7 @@ dag = DAG(
 
 submit = SparkKubernetesOperator(
     task_id="submit",
-    application_file=dag.param["yaml_file"],
+    application_file=dag.params["yaml_file"],
     # do_xcom_push=True,
     delete_on_termination=False,
     dag=dag,
