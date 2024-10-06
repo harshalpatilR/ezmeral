@@ -15,6 +15,8 @@ import os
 #.config("spark.sql.warnings.enabled", "true") \
 #.config("spark.sql.warnings.level", "all") \
 #.config("spark.sql.warnings.verbose", "true") \
+# keeping the streaming property in comments - not needed for schema evolution code
+#.config("spark.streaming.stopGracefullyOnShutdown", "true") \
 
 # set table to use
 querytable = "local.default.kafka_ingest3"
@@ -24,13 +26,14 @@ inputtable = "local.default.kafka_ingest5"
 spark = SparkSession \
 .builder \
 .appName("HarshalSchemaEvolDemoS3") \
-.config("spark.streaming.stopGracefullyOnShutdown", "true") \
 .config("spark.sql.extensions", "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions") \
 .config("spark.sql.catalog.local", "org.apache.iceberg.spark.SparkCatalog") \
 .config("spark.sql.catalog.local.type", "hadoop") \
 .config("spark.sql.catalog.local.warehouse", "s3a://icebergdata/warehouse") \
 .config("spark.logger", "ERROR") \
 .getOrCreate()
+
+spark.sparkContext.setLogLevel("ERROR")
 
 print("-" * 20)
 print("-" * 20)
