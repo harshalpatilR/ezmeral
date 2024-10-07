@@ -17,7 +17,7 @@ spec:
   mode: cluster
   image: '{{dag_run.conf["airgap_registry_url"]|default("", True)}}gcr.io/mapr-252711/spark-3.5.1:v3.5.1.0.1'
   imagePullPolicy: Always
-  mainApplicationFile: local:///mounts/shared-volume/airflow-jars/DataProcessTransfer.jar
+  mainApplicationFile: local:///mounts/shared-volume/shared/airflow-jars/DataProcessTransfer.jar
   mainClass: com.mapr.sparkdemo.DataProcessTransfer
   arguments:
     - s3a://{{dag_run.conf["s3_bucket"]}}/{{dag_run.conf["s3_path"]}}
