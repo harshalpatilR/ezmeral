@@ -11,6 +11,7 @@ Covers topics :
 * Streaming / Kafka
 * Batch
 * Data Fabric 
+* AI / ML / MLOps
 * etc.
 
 <br>
