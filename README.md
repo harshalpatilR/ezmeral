@@ -5,9 +5,10 @@ This is Harshal Patil's eclectic collection of code bits run on Ezmeral Data Fab
 Covers topics :
 
 * Apache Spark
+* Apache Airflow
+* Apache Iceberg
 * Presto
 * Superset
-* Apache Iceberg
 * Streaming / Kafka
 * Batch
 * Data Fabric 
@@ -20,3 +21,4 @@ Covers topics :
 
 <br>
 
+![Ezmeral](images/UA_Lakehouse_Streaming1.jpg)
