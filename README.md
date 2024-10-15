@@ -16,8 +16,10 @@ Covers topics :
 * etc.
 
 <br>
+
 ![Ezmeral](images/UA_Lakehouse_Streaming1.jpg)
 
-![Ezmeral](images/hpe-ezmeral.png)
 <br>
+
+![Ezmeral](images/hpe-ezmeral.png)
 
