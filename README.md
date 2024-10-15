@@ -17,6 +17,7 @@ Covers topics :
 
 <br>
 ![Ezmeral](images/UA_Lakehouse_Streaming1.jpg)
+
 ![Ezmeral](images/hpe-ezmeral.png)
 <br>
 
