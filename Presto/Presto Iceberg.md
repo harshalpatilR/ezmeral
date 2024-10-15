@@ -12,7 +12,7 @@ select count(*) as num_records from dficeberg.default.kafka_ingest3
 
 ![Counts](images/iceberg_counts.jpg)
 
-2) Check select works on the stream ingestion table. We should be able to select recrods from this table.
+2) Ensure select works on the stream ingestion table. We should be able to select recrods from this table.
 
 ```sql
 select * from dficeberg.default.kafka_ingest3
@@ -20,7 +20,7 @@ select * from dficeberg.default.kafka_ingest3
 
 ![Select](images/iceberg_select.jpg)
 
-3) Check snapshots are visible. It is indeed Iceberg table.
+3) Ensure snapshots are visible. It is indeed Iceberg table.
 
 ```sql
 select made_current_at, cast(snapshot_id as varchar) as snapshot, cast(parent_id as varchar) as parent, is_current_ancestor from dficeberg.default."kafka_ingest3$history"
