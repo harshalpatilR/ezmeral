@@ -99,6 +99,60 @@ We do have Hue running on Ezmeral Data Fabric. With this, we can run a tranditio
 
 ![Counts](images/Hue_query_NiFi1.png)
 
+<br>
+
+3) To connect to the same data source but via Hive Metastore, configs are as below. These configs are taken directly from Presto Master Pod. However, the config is entered via Ezmeral Unified Analytics User Interface.
+
+```bash
+$ kubectl exec -it ezpresto-sts-mst-0 -n ezpresto -- /bin/bash
+
+logged into Presto Master container
+$ cd /etc/presto/catalog
+
+```
+
+```bash
+$ cat hivehmsedf.properties 
+
+#adding catalog using endpoint
+#Fri Oct 04 07:35:07 UTC 2024
+hive.hdfs.authentication.type=MAPRSASL
+hive.metastore.uri=thrift\://172.31.6.110\:9083
+hive.metastore.authentication.type=MAPRSASL
+connector.name=hive-hadoop2
+df.cluster.name=my.cluster.com
+hive.config.resources=/etc/presto/catalog/hivehmsedf/hive.config.resources.config
+hive.metastore=thrift
+df.cluster.details=my.cluster.com secure\=true 172.31.6.110\:7222
+hive.hdfs.df.ticket=my.cluster.com <ticket details>
+
+```
+
+```bash
+$ cd hivehmsedf
+$ cat hive.config.resources.config 
+
+<configuration> 
+<property> 
+    <name>fs.defaultFS</name> 
+    <value>maprfs://my.cluster.com/</value> 
+</property> 
+</configuration> 
+
+```
+
+```bash
+$ cd maprconf
+$ cat mapr-clusters.conf
+
+my.cluster.com secure=true 172.31.6.110:7222
+cat maprtickets 
+my.cluster.com <ticket details>
+
+```
+
+
+
 *For Reference:*
 
 Table definition in Hive for this table is as below. If we connect to Hive Metastore via Thrift and access this table then this definition will be used. If we directly connect to the folder with Parquet files then the schema stored in Parquet files is used.
