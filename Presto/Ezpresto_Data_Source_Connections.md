@@ -7,6 +7,17 @@
 ##### It is a versatile connector that allows connectins to file-based data stores (Parquet based Hive tables, Iceberg tables etc.) as well as external Hive Metastores (such as those on traditional Hadoop clusters). 
 
 <br>
+
+**Architecture**
+
+The solution architecture used in this document is shown here.
+![](images/Presto_arch1.png)
+
+
+
+<br>
+
+**Steps** 
  
 1) Multiple ways to configure Hive connector are shown. 
 
@@ -42,9 +53,13 @@ Found 278 items
 ```
 Further data ingestion will result in increase in records of this table via addition on new Parquet files into the same directory that defines the Hive table.
 
-We use Ezmeral Unified Analytics user interface to provide parameters necessary to connect to this source from Presto. The underlying values are shown below. 
+We use Ezmeral Unified Analytics user interface to provide parameters necessary to connect to this source from Presto. The underlying values are shown below. Presto connectors are created via Ezmeral Unified Analytics User Interface. The configs saved as part of these connectors can be found inside Presto Master Pods.
 
-These outputs are taken from the Presto Master Pod in Ezmeral Unified Analytics
+![](images/Hive_Connection.jpg)
+
+
+
+These connector settings are taken from the Presto Master Pod in Ezmeral Unified Analytics
 
 ```bash
 $ kubectl exec -it ezpresto-sts-mst-0 -n ezpresto -- /bin/bash
@@ -103,6 +118,86 @@ We do have Hue running on Ezmeral Data Fabric. With this, we can run a tranditio
 
 3) To connect to the same data source but via Hive Metastore, configs are as below. These configs are taken directly from Presto Master Pod. However, the config is entered via Ezmeral Unified Analytics User Interface.
 
+Table definition in Hive Metastore for this NiFi ingestion table is as below. If we connect to Hive Metastore via Thrift and access this table then this table name and this table definition will be used. If we directly connect to the folder with Parquet files then the schema stored in Parquet files themselves is used.
+
+```sql
+1 CREATE EXTERNAL TABLE `default.telemetry`(
+2	  `datetime` string, 
+3	  `machineid` string, 
+4	  `volt` string, 
+5	  `rotate` string, 
+6	  `pressure` string, 
+7	  `vibration` string)
+8	ROW FORMAT SERDE 
+9	  'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe' 
+10	STORED AS INPUTFORMAT 
+11	  'org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat' 
+12	OUTPUTFORMAT 
+13	  'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat'
+14	LOCATION
+15	  'maprfs:/mapr/my.cluster.com/nifiland1'
+```
+
+We are able to see the Hive Metastore tables via Presto on Ezmeral Unified Analytics.
+![](images/HMS_Tables_Presto.png)
+![](images/HMS_table_def.png)
+
+We are able to query the Hive Metastore tables via Presto on Ezmeral Unified Analytics.
+![](images/HMS_Presto_query.png)
+
+If we go to Hive CLI on Ezmeral Data Fabric then we can access the same table and query it. We can confirm that the record counts in this table match with the record counts from Presto query on this same table. 
+
+```sql
+$ hive
+ 
+hive> show schemas;
+OK
+default
+Time taken: 0.545 seconds, Fetched: 1 row(s)
+hive> show tables;
+OK
+student1
+telco_external_table
+telemetry
+Time taken: 0.157 seconds, Fetched: 3 row(s)
+hive> select count(*) from default.telemetry;
+Query ID = mapr_20241022063242_80151c80-bd2e-4e93-8b97-448cc7c6bdd5
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1720598343569_0021, Tracking URL = https://ip-172-31-6-110.us-east-2.compute.internal:8090/proxy/application_1720598343569_0021/
+Kill Command = /opt/mapr/hadoop/hadoop-3.3.5/bin/mapred job  -kill job_1720598343569_0021
+Hadoop job information for Stage-1: number of mappers: 31; number of reducers: 1
+2024-10-22 06:32:51,989 Stage-1 map = 0%,  reduce = 0%
+2024-10-22 06:32:59,282 Stage-1 map = 6%,  reduce = 0%, Cumulative CPU 12.77 sec
+2024-10-22 06:33:00,313 Stage-1 map = 10%,  reduce = 0%, Cumulative CPU 18.21 sec
+2024-10-22 06:33:01,340 Stage-1 map = 26%,  reduce = 0%, Cumulative CPU 47.37 sec
+2024-10-22 06:33:02,370 Stage-1 map = 35%,  reduce = 0%, Cumulative CPU 64.66 sec
+2024-10-22 06:33:04,436 Stage-1 map = 48%,  reduce = 0%, Cumulative CPU 89.18 sec
+2024-10-22 06:33:05,461 Stage-1 map = 55%,  reduce = 0%, Cumulative CPU 101.54 sec
+2024-10-22 06:33:06,483 Stage-1 map = 77%,  reduce = 0%, Cumulative CPU 146.85 sec
+2024-10-22 06:33:07,506 Stage-1 map = 94%,  reduce = 0%, Cumulative CPU 176.02 sec
+2024-10-22 06:33:08,526 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 186.57 sec
+2024-10-22 06:33:13,634 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 189.58 sec
+MapReduce Total cumulative CPU time: 3 minutes 9 seconds 580 msec
+Ended Job = job_1720598343569_0021
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 31  Reduce: 1   Cumulative CPU: 189.58 sec   MAPRFS Read: 0 MAPRFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 3 minutes 9 seconds 580 msec
+OK
+243555800
+Time taken: 32.488 seconds, Fetched: 1 row(s)
+hive> 
+```
+<br>
+Below configs are taken from Presto Master pod that show how Presto connects to Hive.
+
 ```bash
 $ kubectl exec -it ezpresto-sts-mst-0 -n ezpresto -- /bin/bash
 
@@ -153,28 +248,7 @@ my.cluster.com <ticket details>
 
 
 
-*For Reference:*
 
-Table definition in Hive for this table is as below. If we connect to Hive Metastore via Thrift and access this table then this definition will be used. If we directly connect to the folder with Parquet files then the schema stored in Parquet files is used.
-
-```sql
-1 CREATE EXTERNAL TABLE `default.telemetry`(
-2	  `datetime` string, 
-3	  `machineid` string, 
-4	  `volt` string, 
-5	  `rotate` string, 
-6	  `pressure` string, 
-7	  `vibration` string)
-8	ROW FORMAT SERDE 
-9	  'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe' 
-10	STORED AS INPUTFORMAT 
-11	  'org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat' 
-12	OUTPUTFORMAT 
-13	  'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat'
-14	LOCATION
-15	  'maprfs:/mapr/my.cluster.com/nifiland1'
-
-```
 
 
 
