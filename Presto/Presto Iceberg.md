@@ -116,9 +116,11 @@ $ cat /etc/presto/catalog/s3icebergdata/iceberg.hadoop.config.resources.config
 <br>
 <br>
 6) Similarly, Delta-Lake connector can be configured to connect to Delta-Lake tables as well. 
+
 ![](images/Presto_Delta_connector.jpg)
 
 Once added, the connector becomes active and can be used a data source to run Presto queries.
+
 ![](images/delta-connector-active.png)
 
 The details on configuration taken from Presto Master Pod are as below.
