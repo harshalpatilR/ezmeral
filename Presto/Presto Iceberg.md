@@ -5,6 +5,8 @@
 <br>
 <br>
 
+Configuration details of the Presto connector to Iceberg warehouse are included below.
+
 1) After each ingestion, the counts will keep increasing. Check streaming counts are ok. 
 
 
@@ -85,17 +87,17 @@ $ cat /etc/presto/catalog/s3icebergdata/iceberg.hadoop.config.resources.config
 
     <property>
         <name>presto.s3.access-key</name>
-        <value>VABG8RZ0CHH8X49L91M4NIU2SZT18QDHJ8WY1DDIMCYQ7LNXE2Q03OK0J9I08TVM28MFCJ106CM7C9KEJ7E1I2G01TY6YL6V6D4WUJOO052B7F15Z7EQI4ARS</value>
+        <value><xxxx></value>
     </property>
 
     <property>
         <name>presto.s3.secret-key</name>
-        <value>VLPC88QV6Z9LQ63LPRUCK9XT2GCP7FXGZYL4F4JMLUUMGPNJ5C6V18VGCWEPLNUNATAYDZ310POFLYY90UBOR38ILSNWSDIUQSO8M16DYP3NVU5</value>
+        <value><xxxx></value>
     </property>
 
     <property>
         <name>presto.s3.endpoint</name>
-        <value>https://18.223.205.241:9000</value>
+        <value>https://<IP>:9000</value>
     </property>
 
     <property>
