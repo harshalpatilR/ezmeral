@@ -12,6 +12,8 @@ Configuration details of the Presto connector to Iceberg warehouse are included 
 **Architecture**
 
 The solution architecture used in this document is shown here. The Presto connection details are described from point 5 onwards.
+<br>
+
 ![](images/Presto_arch2.png)
 
 <br>

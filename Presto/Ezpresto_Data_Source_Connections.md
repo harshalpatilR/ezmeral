@@ -11,6 +11,8 @@
 **Architecture**
 
 The solution architecture used in this document is shown here.
+<br>
+
 ![](images/Presto_arch1.png)
 
 
