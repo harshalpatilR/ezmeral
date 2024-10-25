@@ -7,6 +7,17 @@
 
 Configuration details of the Presto connector to Iceberg warehouse are included below.
 
+<br>
+
+**Architecture**
+
+The solution architecture used in this document is shown here. The Presto connection details are described from point 5 onwards.
+![](images/Presto_arch2.png)
+
+<br>
+
+**Steps** 
+
 1) After each ingestion, the counts will keep increasing. Check streaming counts are ok. 
 
 
@@ -97,7 +108,7 @@ $ cat /etc/presto/catalog/s3icebergdata/iceberg.hadoop.config.resources.config
 
     <property>
         <name>presto.s3.endpoint</name>
-        <value>https://<IP>:9000</value>
+        <value>https://<IP>:<Port></value>
     </property>
 
     <property>
