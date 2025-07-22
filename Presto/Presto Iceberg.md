@@ -155,3 +155,60 @@ hive.s3.ssl.enabled=false
 hive.metastore=deltadiscovery
 delta.datadir=s3\://delta/taxidelta/
 ```
+
+Presto connectors can be created via UI or via API call to Presto endpoint
+
+```
+curl -u "user":"pwd" --location 'https://ezpresto.ezua.org/v1/catalog' 
+--header 'Content-Type: application/json' --insecure --data 
+'{ "catalogName": "S3icebergdata", "connectorName": "iceberg", 
+"properties": { "iceberg.catalog.type": "hadoop", "iceberg.catalog.warehouse":
+"s3://icebergdata/warehouse", "iceberg.catalog.cached-catalog-num": "10",
+"hive.s3.aws-access-key": "<access_key>", "hive.s3.aws-secret-key":
+"<secret_key>", "hive.s3.endpoint": "https://18.223.205.241:9000", 
+"hive.s3.path-style-access": true, "hive.s3.ssl.enabled": false },
+"fileProperties": { "iceberg.hadoop.config.resources": [ "<base64 encoded properties"] } }'
+```
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>        
+    <property>
+        <name>presto.s3.ssl.enabled</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>presto.s3.access-key</name>
+        <value>xxx</value>
+    </property>
+
+    <property>
+        <name>presto.s3.secret-key</name>
+        <value>xxx</value>
+    </property>
+
+    <property>
+        <name>presto.s3.endpoint</name>
+        <value>https://IP:9000</value>
+    </property>
+
+    <property>
+        <name>presto.s3.path-style-access</name>
+        <value>true</value>
+    </property>
+    
+    <property>
+        <name>fs.s3.impl</name>
+        <value>com.facebook.presto.hive.s3.PrestoS3FileSystem</value>
+    </property>
+
+    <property>
+        <name>fs.s3a.impl</name>
+        <value>com.facebook.presto.hive.s3.PrestoS3FileSystem</value>
+    </property>
+</configuration>
+
+```
+
