@@ -1,0 +1,48 @@
+replicaCount: 1
+
+image:
+  repository: hspatil/bert-app # This should match the name you used when building your Docker image
+  #pullPolicy: IfNotPresent
+  pullPolicy: Always
+
+  #tag: latest # Optionally specify a tag, if not specified, it will use the default from the Dockerfile or latest
+  tag: v2.1.0
+
+service:
+  type: ClusterIP # Use LoadBalancer for cloud environments, or NodePort/ClusterIP for local/internal access
+  port: 7860
+
+# Resources requests and limits for the pod
+resources:
+  limits:
+    cpu: 5000m
+    memory: 1Gi
+    nvidia.com/gpu: 0
+  requests:
+    cpu: 2000m
+    memory: 512Mi
+    nvidia.com/gpu: 0
+
+# Node selector to specify where the pod should run (optional)
+nodeSelector: {}
+
+# Tolerations for taints (optional)
+tolerations: []
+
+# Affinity rules (optional)
+affinity: {}
+
+# virtual service 
+ezua:
+  domainName: "${DOMAIN_NAME}"
+  #Use next options in order to configure the application endpoint.
+  #Example of a VirtualService is here:
+  virtualService:
+    endpoint: "harshal-bertapp.${DOMAIN_NAME}"
+    istioGateway: "istio-system/ezaf-gateway"
+
+  #authorizationPolicy:
+  #  namespace: "istio-system"
+  #  providerName: "oauth2-proxy"
+  #  matchLabels:
+  #    app: "langflow-harshal"

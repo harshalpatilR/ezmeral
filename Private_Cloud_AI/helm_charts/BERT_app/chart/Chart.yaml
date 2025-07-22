@@ -1,0 +1,5 @@
+apiVersion: v2
+name: bert-sentiment-app
+description: A Helm chart for deploying the BERT sentiment analysis Gradio application.
+version: 0.2.0
+appVersion: "1.1.0" # This is the version of the application itself
