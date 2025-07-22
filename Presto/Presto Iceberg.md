@@ -169,6 +169,9 @@ curl -u "user":"pwd" --location 'https://ezpresto.ezua.org/v1/catalog'
 "hive.s3.path-style-access": true, "hive.s3.ssl.enabled": false },
 "fileProperties": { "iceberg.hadoop.config.resources": [ "<base64 encoded properties"] } }'
 ```
+
+Base64 encoded properties 
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
