@@ -1,0 +1,11 @@
+
+# helm package <path>
+
+apiVersion: v2
+# must be unique between versions
+name: llm-client-app4   # .Release.Name resolves to this
+description: A Helm chart for a simple LLM API client application.
+# must be unique between versions
+version: 0.4.0
+# what gets displayed in UI
+appVersion: "1.0.0"

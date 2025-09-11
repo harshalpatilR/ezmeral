@@ -1,0 +1,33 @@
+# INSTRUCTIONS
+# docker build --platform linux/amd64 -t <repo>/<image>:version .
+# docker push <repo>/<image>:version
+# can be pushed to private repo in similar fashion
+
+# Use a Python base image with a specific version
+FROM python:3.10-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+# This allows Docker to cache the layer for dependencies,
+# speeding up builds if only the application code changes.
+COPY requirements.txt .
+
+# Install the Python dependencies
+# --no-cache-dir: Prevents pip from storing cached data, reducing image size.
+# -r requirements.txt: Installs packages listed in requirements.txt.
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+# Copy the Python script into the container
+COPY llm-caller.py .
+
+
+# Expose the port that Gradio will run on. The default is 7860.
+EXPOSE 7860
+
+# Command to run the application
+# The `server_name` is set to '0.0.0.0' in the Python script,
+# which is crucial for making the app accessible from outside the container.
+CMD ["python", "llm-caller.py"]
