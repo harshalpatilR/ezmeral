@@ -189,6 +189,6 @@ $ aws s3 ls s3://ingest-bucket-1/ \
 
 Use the below files:
 
-[Token creation script] (102_s3_token_bash.sh)
+[Token creation script](102_s3_token_bash.sh)
 
 [Check ingested data from within appliance](102_s3-file-read.ipynb)
