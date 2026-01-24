@@ -120,3 +120,70 @@ $ aws s3 ls s3://mlflow.sgaie --endpoint https://s3.aie19.aie.sg --no-verify-ssl
 
 ```
 
+### Use provided script from external system to generate token
+
+Run script from external system to get token generated and populated in environment variables. Subsequently issue AWS CLIs as needed to create buckets and upload files.
+
+```bash
+$ source ./102_s3_token_bash.sh ./2601-sgaie-refresh-token.txt keycloak.aie19.aie.sg
+
+DEBUG: Filename detected: ./2601-sgaie-refresh-token.txt
+DEBUG: Domain detected: keycloak.aie19.aie.sg
+DEBUG: SECRET detected: A01wdSQbGVuMMErbf3Nxt5kf
+Success: refresh_token loaded from ./2601-sgaie-refresh-token.txt
+
+PCAI_ACCESS_TOKEN received: token is xxxxxxx
+AWS secret and access key environment variables set. You may use AWS CLI now.
+Process completed for domain: keycloak.aie19.aie.sg
+```
+
+Also set the below for compatibility of AWS CLI with non-AWS S3 compatible storage.
+
+```bash
+export AWS_REQUEST_CHECKSUM_CALCULATION="when_required"
+export PYTHONWARNINGS="ignore:Unverified HTTPS request"
+```
+
+**List buckets**
+ 
+```bash
+$ aws s3 ls --endpoint https://s3.aie19.aie.sg --no-verify-ssl
+
+2025-08-28 10:36:41 mlflow.sgaie
+2025-08-28 21:40:22 sgaie-kfp
+```
+**Create bucket**
+
+```bash
+$ aws s3 mb s3://ingest-bucket-1 \
+    --endpoint https://s3.aie19.aie.sg \
+    --no-verify-ssl
+
+make_bucket: ingest-bucket-1
+
+$ aws s3 ls --endpoint https://s3.aie19.aie.sg --no-verify-ssl
+
+2026-01-18 11:21:52 ingest-bucket-1 <<<<<<<
+2025-08-28 10:36:41 mlflow.sgaie
+2025-08-28 21:40:22 sgaie-kfp
+
+```
+
+
+**Upload file**
+
+```bash
+$ aws s3 cp 102_s3_token_bash.sh s3://ingest-bucket-2/ \
+    --endpoint https://s3.aie19.aie.sg \
+    --no-verify-ssl
+
+upload: ./102_s3_token_bash.sh to s3://ingest-bucket-1/102_s3_token_bash.sh
+
+$ aws s3 ls s3://ingest-bucket-1/ \
+    --endpoint https://s3.aie19.aie.sg \
+    --no-verify-ssl --recursive
+
+2026-01-18 12:18:37       2044 102_s3_token_bash.sh <<<<<<<
+
+```
+
