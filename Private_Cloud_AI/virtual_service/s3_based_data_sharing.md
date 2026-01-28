@@ -6,6 +6,12 @@ This Istio Virtual Service refers to configuring in-built S3 object store to be 
 
 Data scientist facing interface is delivered by HPE AI Essentials which is a Kubernetes based system. It runs Istio Gateway to control access. Any service running internally can only be accessed from outside if Istio Gateway allows it. By default S3 object store inside Private Cloud AI is not accessible from outside. However, clients can choose to enable this external access for data sharing from external applications and systems. 
 
+## Architecture
+
+This diagram shows the interactions taking place between external system and Private Cloud AI to exchange / ingest data. Ingested data is available to variety of services including RAG & Agentic AI that run inside Private Cloud AI.
+
+![Deploy Virtual Service](s3-images/S3-ingest-pcai-arch.png)
+
 ## Process Overview
 
 | Step | Action | Description |
