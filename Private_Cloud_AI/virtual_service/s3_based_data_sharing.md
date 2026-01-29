@@ -17,7 +17,7 @@ This diagram shows the interactions taking place between external system and Pri
 
 Click thumbnail or the link below.
 
-[![Watch the video](s3-images/s3-data-ingest-yt.jpg)](https://youtu.be/94mGyaQYkIQ)
+[![Watch the video](s3-images/s3-data-ingest-yt-button2.png)](https://youtu.be/94mGyaQYkIQ)
 
 [Demo: Ingest data into internal S3](https://youtu.be/94mGyaQYkIQ)
 
