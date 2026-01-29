@@ -12,6 +12,24 @@ This diagram shows the interactions taking place between external system and Pri
 
 ![Deploy Virtual Service](s3-images/S3-ingest-pcai-arch.png)
 
+
+## Demo
+
+Click thumbnail or the link below.
+
+[![Watch the video](s3-images/s3-data-ingest-yt.jpg)](https://youtu.be/94mGyaQYkIQ)
+
+[Demo: Ingest data into internal S3](https://youtu.be/94mGyaQYkIQ)
+
+## Scripts
+
+Use the below files:
+
+[Token creation script](102_s3_token_bash.sh)
+
+[Check ingested data from within appliance](102_s3-file-read.ipynb)
+
+
 ## Process Overview
 
 | Step | Action | Description |
@@ -193,8 +211,3 @@ $ aws s3 ls s3://ingest-bucket-1/ \
 
 ```
 
-Use the below files:
-
-[Token creation script](102_s3_token_bash.sh)
-
-[Check ingested data from within appliance](102_s3-file-read.ipynb)
