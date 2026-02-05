@@ -25,6 +25,8 @@ Use the below files:
 
 [NL2SQL Flow](natural_language_query/92_NL2SQL_Pipeline_2026.json)
 
+[NL2SQL Flow - Python REPL Custom Component for Presto](natural_language_query/92_Python REPL.json)
+
 [OpenwebUI Pipeline](natural_language_query/92_nl2sql_Openwebui_Pipeline.py)
 
 
