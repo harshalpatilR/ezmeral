@@ -15,22 +15,17 @@ This diagram shows the Architecture of the system. The solution leverages framew
 
 Click thumbnail or the link below.
 
-**WIP** 
+[![Watch the video](nl2sql/YT-video-icon-small.jpg)](https://youtu.be/YurtTt_3xC8)
 
-[![Watch the video](s3-images/s3-data-ingest-yt-button2.png)](tbx)
-
-[Demo: Ingest data into internal S3](tbc)
+[Demo: Natural Language Data Query](https://youtu.be/YurtTt_3xC8)
 
 ## Scripts
 
 Use the below files:
 
-**WIP** 
+[NL2SQL Flow](natural_language_query/92_NL2SQL_Pipeline_2026.json)
 
-
-[NL2SQL Flow](tbc)
-
-[OpenwebUI Pipeline](tbc)
+[OpenwebUI Pipeline](natural_language_query/92_nl2sql_Openwebui_Pipeline.py)
 
 
 ## Process Overview
@@ -65,11 +60,16 @@ MCP connections will be covered in a seperate receipe.
 
 Langflow NL2SQL Flow can be uploaded into Langflow framework. 
 
-![](nl2sql/langflow-nl2sql.jpg)
+![](nl2sql/langflow-nl2sql-2026.jpg)
 
 The flow uses OpenAI Compatible Locally Hosted LLM on Private Cloud AI. So while the functional block used is OpenAI LLM, the actual model endpoint URL and model token are from Private Cloud AI inference deployment service.
 
-![](nl2sql/langflow-llm.jpg)
+The flow uses Global Variables defined in Langflow to protect sensitive information such as API keys, refresh and security keys etc. These must be defined prior to running the flow.
+
+![](nl2sql/langflow-globalvar0.jpg)
+
+
+![](nl2sql/langflow-globalvar1.jpg)
 
 The flow has a share button which shows the API endpoint to call the flow. This API endpoint is required to be configured in OpenwebUI pipeline.
 

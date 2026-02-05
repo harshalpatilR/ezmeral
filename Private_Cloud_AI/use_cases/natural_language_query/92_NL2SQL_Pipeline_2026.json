@@ -1,0 +1,2535 @@
+{
+  "data": {
+    "edges": [
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Prompt",
+            "id": "Prompt-NnhMC",
+            "name": "prompt",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "system_message",
+            "id": "OpenAIModel-DmJrk",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-Prompt-NnhMC{œdataTypeœ:œPromptœ,œidœ:œPrompt-NnhMCœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}-OpenAIModel-DmJrk{œfieldNameœ:œsystem_messageœ,œidœ:œOpenAIModel-DmJrkœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "Prompt-NnhMC",
+        "sourceHandle": "{œdataTypeœ:œPromptœ,œidœ:œPrompt-NnhMCœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "OpenAIModel-DmJrk",
+        "targetHandle": "{œfieldNameœ:œsystem_messageœ,œidœ:œOpenAIModel-DmJrkœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "SimpleSQLParser",
+            "id": "SimpleSQLParser-mHPx7",
+            "name": "sql_output",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "sql_query",
+            "id": "PythonREPLComponent-SJBvz",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-SimpleSQLParser-mHPx7{œdataTypeœ:œSimpleSQLParserœ,œidœ:œSimpleSQLParser-mHPx7œ,œnameœ:œsql_outputœ,œoutput_typesœ:[œMessageœ]}-PythonREPLComponent-SJBvz{œfieldNameœ:œsql_queryœ,œidœ:œPythonREPLComponent-SJBvzœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "SimpleSQLParser-mHPx7",
+        "sourceHandle": "{œdataTypeœ:œSimpleSQLParserœ,œidœ:œSimpleSQLParser-mHPx7œ,œnameœ:œsql_outputœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "PythonREPLComponent-SJBvz",
+        "targetHandle": "{œfieldNameœ:œsql_queryœ,œidœ:œPythonREPLComponent-SJBvzœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "OpenAIModel",
+            "id": "OpenAIModel-DmJrk",
+            "name": "text_output",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input_text",
+            "id": "SimpleSQLParser-mHPx7",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-OpenAIModel-DmJrk{œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-DmJrkœ,œnameœ:œtext_outputœ,œoutput_typesœ:[œMessageœ]}-SimpleSQLParser-mHPx7{œfieldNameœ:œinput_textœ,œidœ:œSimpleSQLParser-mHPx7œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "OpenAIModel-DmJrk",
+        "sourceHandle": "{œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-DmJrkœ,œnameœ:œtext_outputœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "SimpleSQLParser-mHPx7",
+        "targetHandle": "{œfieldNameœ:œinput_textœ,œidœ:œSimpleSQLParser-mHPx7œ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "PythonREPLComponent",
+            "id": "PythonREPLComponent-SJBvz",
+            "name": "results",
+            "output_types": [
+              "Data"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "query_results",
+            "id": "DataInterpreter-Fvzdz",
+            "inputTypes": [
+              "Data"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "reactflow__edge-PythonREPLComponent-SJBvz{œdataTypeœ:œPythonREPLComponentœ,œidœ:œPythonREPLComponent-SJBvzœ,œnameœ:œresultsœ,œoutput_typesœ:[œDataœ]}-DataInterpreter-Fvzdz{œfieldNameœ:œquery_resultsœ,œidœ:œDataInterpreter-Fvzdzœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "PythonREPLComponent-SJBvz",
+        "sourceHandle": "{œdataTypeœ:œPythonREPLComponentœ,œidœ:œPythonREPLComponent-SJBvzœ,œnameœ:œresultsœ,œoutput_typesœ:[œDataœ]}",
+        "target": "DataInterpreter-Fvzdz",
+        "targetHandle": "{œfieldNameœ:œquery_resultsœ,œidœ:œDataInterpreter-Fvzdzœ,œinputTypesœ:[œDataœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Prompt",
+            "id": "Prompt-pUGgn",
+            "name": "prompt",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "system_prompt",
+            "id": "DataInterpreter-Fvzdz",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "reactflow__edge-Prompt-pUGgn{œdataTypeœ:œPromptœ,œidœ:œPrompt-pUGgnœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}-DataInterpreter-Fvzdz{œfieldNameœ:œsystem_promptœ,œidœ:œDataInterpreter-Fvzdzœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "Prompt-pUGgn",
+        "sourceHandle": "{œdataTypeœ:œPromptœ,œidœ:œPrompt-pUGgnœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "DataInterpreter-Fvzdz",
+        "targetHandle": "{œfieldNameœ:œsystem_promptœ,œidœ:œDataInterpreter-Fvzdzœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ChatInput",
+            "id": "ChatInput-mPGxE",
+            "name": "message",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "original_question",
+            "id": "DataInterpreter-Fvzdz",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__ChatInput-mPGxE{œdataTypeœ:œChatInputœ,œidœ:œChatInput-mPGxEœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-DataInterpreter-Fvzdz{œfieldNameœ:œoriginal_questionœ,œidœ:œDataInterpreter-Fvzdzœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "ChatInput-mPGxE",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-mPGxEœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "DataInterpreter-Fvzdz",
+        "targetHandle": "{œfieldNameœ:œoriginal_questionœ,œidœ:œDataInterpreter-Fvzdzœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "ChatInput",
+            "id": "ChatInput-mPGxE",
+            "name": "message",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "OpenAIModel-DmJrk",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__ChatInput-mPGxE{œdataTypeœ:œChatInputœ,œidœ:œChatInput-mPGxEœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}-OpenAIModel-DmJrk{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-DmJrkœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "ChatInput-mPGxE",
+        "sourceHandle": "{œdataTypeœ:œChatInputœ,œidœ:œChatInput-mPGxEœ,œnameœ:œmessageœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "OpenAIModel-DmJrk",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-DmJrkœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "DataInterpreter",
+            "id": "DataInterpreter-Fvzdz",
+            "name": "interpretation",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "ChatOutput-dQC1H",
+            "inputTypes": [
+              "Data",
+              "DataFrame",
+              "Message"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__DataInterpreter-Fvzdz{œdataTypeœ:œDataInterpreterœ,œidœ:œDataInterpreter-Fvzdzœ,œnameœ:œinterpretationœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-dQC1H{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-dQC1Hœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "DataInterpreter-Fvzdz",
+        "sourceHandle": "{œdataTypeœ:œDataInterpreterœ,œidœ:œDataInterpreter-Fvzdzœ,œnameœ:œinterpretationœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-dQC1H",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-dQC1Hœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+      },
+      {
+        "animated": false,
+        "className": "",
+        "data": {
+          "sourceHandle": {
+            "dataType": "SimpleSQLParser",
+            "id": "SimpleSQLParser-mHPx7",
+            "name": "sql_output",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "ChatOutput-my9jx",
+            "inputTypes": [
+              "Data",
+              "DataFrame",
+              "Message"
+            ],
+            "type": "other"
+          }
+        },
+        "id": "xy-edge__SimpleSQLParser-mHPx7{œdataTypeœ:œSimpleSQLParserœ,œidœ:œSimpleSQLParser-mHPx7œ,œnameœ:œsql_outputœ,œoutput_typesœ:[œMessageœ]}-ChatOutput-my9jx{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-my9jxœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}",
+        "selected": false,
+        "source": "SimpleSQLParser-mHPx7",
+        "sourceHandle": "{œdataTypeœ:œSimpleSQLParserœ,œidœ:œSimpleSQLParser-mHPx7œ,œnameœ:œsql_outputœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "ChatOutput-my9jx",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-my9jxœ,œinputTypesœ:[œDataœ,œDataFrameœ,œMessageœ],œtypeœ:œotherœ}"
+      }
+    ],
+    "nodes": [
+      {
+        "data": {
+          "id": "OpenAIModel-DmJrk",
+          "node": {
+            "base_classes": [
+              "LanguageModel",
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Generates text using OpenAI LLMs.",
+            "display_name": "OpenAI",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "input_value",
+              "system_message",
+              "stream",
+              "max_tokens",
+              "model_kwargs",
+              "json_mode",
+              "model_name",
+              "openai_api_base",
+              "api_key",
+              "temperature",
+              "seed",
+              "max_retries",
+              "timeout"
+            ],
+            "frozen": false,
+            "icon": "OpenAI",
+            "last_updated": "2026-02-05T04:15:55.492Z",
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "hidden": null,
+                "method": "text_response",
+                "name": "text_output",
+                "options": null,
+                "required_inputs": [],
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              },
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Language Model",
+                "hidden": null,
+                "method": "build_model",
+                "name": "model_output",
+                "options": null,
+                "required_inputs": [
+                  "api_key"
+                ],
+                "selected": "LanguageModel",
+                "tool_mode": true,
+                "types": [
+                  "LanguageModel"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "api_key": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "OpenAI API Key",
+                "dynamic": false,
+                "info": "The OpenAI API Key to use for the OpenAI model.",
+                "input_types": [],
+                "load_from_db": true,
+                "name": "api_key",
+                "password": true,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": "PCAI_LLM_GPT_OSS_20b_TOKEN"
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from typing import Any\n\nfrom langchain_openai import ChatOpenAI\nfrom pydantic.v1 import SecretStr\n\nfrom langflow.base.models.model import LCModelComponent\nfrom langflow.base.models.openai_constants import (\n    OPENAI_MODEL_NAMES,\n    OPENAI_REASONING_MODEL_NAMES,\n)\nfrom langflow.field_typing import LanguageModel\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.inputs import BoolInput, DictInput, DropdownInput, IntInput, SecretStrInput, SliderInput, StrInput\nfrom langflow.logging import logger\n\n\nclass OpenAIModelComponent(LCModelComponent):\n    display_name = \"OpenAI\"\n    description = \"Generates text using OpenAI LLMs.\"\n    icon = \"OpenAI\"\n    name = \"OpenAIModel\"\n\n    inputs = [\n        *LCModelComponent._base_inputs,\n        IntInput(\n            name=\"max_tokens\",\n            display_name=\"Max Tokens\",\n            advanced=True,\n            info=\"The maximum number of tokens to generate. Set to 0 for unlimited tokens.\",\n            range_spec=RangeSpec(min=0, max=128000),\n        ),\n        DictInput(\n            name=\"model_kwargs\",\n            display_name=\"Model Kwargs\",\n            advanced=True,\n            info=\"Additional keyword arguments to pass to the model.\",\n        ),\n        BoolInput(\n            name=\"json_mode\",\n            display_name=\"JSON Mode\",\n            advanced=True,\n            info=\"If True, it will output JSON regardless of passing a schema.\",\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            advanced=False,\n            options=OPENAI_MODEL_NAMES + OPENAI_REASONING_MODEL_NAMES,\n            value=\"llama-3.1-8b-instruct\",\n            combobox=True,\n            real_time_refresh=True,\n        ),\n        StrInput(\n            name=\"openai_api_base\",\n            display_name=\"OpenAI API Base\",\n            advanced=True,\n            info=\"The base URL of the OpenAI API. \"\n            \"Defaults to https://api.openai.com/v1. \"\n            \"You can change this to use other APIs like JinaChat, LocalAI and Prem.\",\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"OpenAI API Key\",\n            info=\"The OpenAI API Key to use for the OpenAI model.\",\n            advanced=False,\n            value=\"OPENAI_API_KEY\",\n            required=True,\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            value=0.1,\n            range_spec=RangeSpec(min=0, max=1, step=0.01),\n            show=True,\n        ),\n        IntInput(\n            name=\"seed\",\n            display_name=\"Seed\",\n            info=\"The seed controls the reproducibility of the job.\",\n            advanced=True,\n            value=1,\n        ),\n        IntInput(\n            name=\"max_retries\",\n            display_name=\"Max Retries\",\n            info=\"The maximum number of retries to make when generating.\",\n            advanced=True,\n            value=5,\n        ),\n        IntInput(\n            name=\"timeout\",\n            display_name=\"Timeout\",\n            info=\"The timeout for requests to OpenAI completion API.\",\n            advanced=True,\n            value=700,\n        ),\n    ]\n\n    def build_model(self) -> LanguageModel:  # type: ignore[type-var]\n        # Create httpx client with SSL verification disabled\n        import httpx\n        http_client = httpx.Client(verify=False)\n        \n        parameters = {\n            \"api_key\": SecretStr(self.api_key).get_secret_value() if self.api_key else None,\n            \"model_name\": self.model_name,\n            \"max_tokens\": None,\n            \"model_kwargs\": self.model_kwargs or {},\n            \"base_url\": self.openai_api_base or \"https://api.openai.com/v1\",\n            \"seed\": self.seed,\n            \"max_retries\": self.max_retries,\n            \"timeout\": self.timeout,\n            \"temperature\": self.temperature if self.temperature is not None else 0.1,\n            \"http_client\": http_client,  # Add this line\n        }\n    \n        logger.info(f\"Model name: {self.model_name}\")\n        if self.model_name in OPENAI_REASONING_MODEL_NAMES:\n            logger.info(\"Getting reasoning model parameters\")\n            parameters.pop(\"temperature\")\n            parameters.pop(\"seed\")\n        output = ChatOpenAI(**parameters)\n        if self.json_mode:\n            output = output.bind(response_format={\"type\": \"json_object\"})\n    \n        return output\n\n    def _get_exception_message(self, e: Exception):\n        \"\"\"Get a message from an OpenAI exception.\n\n        Args:\n            e (Exception): The exception to get the message from.\n\n        Returns:\n            str: The message from the exception.\n        \"\"\"\n        try:\n            from openai import BadRequestError\n        except ImportError:\n            return None\n        if isinstance(e, BadRequestError):\n            message = e.body.get(\"message\")\n            if message:\n                return message\n        return None\n\n    def update_build_config(self, build_config: dict, field_value: Any, field_name: str | None = None) -> dict:\n        if field_name in {\"base_url\", \"model_name\", \"api_key\"} and field_value in OPENAI_REASONING_MODEL_NAMES:\n            build_config[\"temperature\"][\"show\"] = False\n            build_config[\"seed\"][\"show\"] = False\n        if field_name in {\"base_url\", \"model_name\", \"api_key\"} and field_value in OPENAI_MODEL_NAMES:\n            build_config[\"temperature\"][\"show\"] = True\n            build_config[\"seed\"][\"show\"] = True\n        return build_config\n"
+              },
+              "input_value": {
+                "_input_type": "MessageInput",
+                "advanced": false,
+                "display_name": "Input",
+                "dynamic": false,
+                "info": "",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "input_value",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "json_mode": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "JSON Mode",
+                "dynamic": false,
+                "info": "If True, it will output JSON regardless of passing a schema.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "json_mode",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "max_retries": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Max Retries",
+                "dynamic": false,
+                "info": "The maximum number of retries to make when generating.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "max_retries",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 5
+              },
+              "max_tokens": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Max Tokens",
+                "dynamic": false,
+                "info": "The maximum number of tokens to generate. Set to 0 for unlimited tokens.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "max_tokens",
+                "placeholder": "",
+                "range_spec": {
+                  "max": 128000,
+                  "min": 0,
+                  "step": 0.1,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": ""
+              },
+              "model_kwargs": {
+                "_input_type": "DictInput",
+                "advanced": true,
+                "display_name": "Model Kwargs",
+                "dynamic": false,
+                "info": "Additional keyword arguments to pass to the model.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "model_kwargs",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "type": "dict",
+                "value": {}
+              },
+              "model_name": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": true,
+                "dialog_inputs": {},
+                "display_name": "Model Name",
+                "dynamic": false,
+                "info": "",
+                "load_from_db": false,
+                "name": "model_name",
+                "options": [
+                  "gpt-4o-mini",
+                  "gpt-4o",
+                  "gpt-4.1",
+                  "gpt-4.1-mini",
+                  "gpt-4.1-nano",
+                  "gpt-4.5-preview",
+                  "gpt-4-turbo",
+                  "gpt-4-turbo-preview",
+                  "gpt-4",
+                  "gpt-3.5-turbo",
+                  "o1"
+                ],
+                "options_metadata": [],
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "openai_api_base": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "OpenAI API Base",
+                "dynamic": false,
+                "info": "The base URL of the OpenAI API. Defaults to https://api.openai.com/v1. You can change this to use other APIs like JinaChat, LocalAI and Prem.",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": true,
+                "name": "openai_api_base",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "PCAI_LLM_GPT_OSS_20b"
+              },
+              "seed": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Seed",
+                "dynamic": false,
+                "info": "The seed controls the reproducibility of the job.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "seed",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 1
+              },
+              "stream": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Stream",
+                "dynamic": false,
+                "info": "Stream the response from the model. Streaming works only in Chat.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "stream",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": false
+              },
+              "system_message": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "System Message",
+                "dynamic": false,
+                "info": "System message to pass to the model.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "system_message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "you are a helpftul assistant"
+              },
+              "temperature": {
+                "_input_type": "SliderInput",
+                "advanced": false,
+                "display_name": "Temperature",
+                "dynamic": false,
+                "info": "",
+                "max_label": "",
+                "max_label_icon": "",
+                "min_label": "",
+                "min_label_icon": "",
+                "name": "temperature",
+                "placeholder": "",
+                "range_spec": {
+                  "max": 1,
+                  "min": 0,
+                  "step": 0.01,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "slider_buttons": false,
+                "slider_buttons_options": [],
+                "slider_input": false,
+                "title_case": false,
+                "tool_mode": false,
+                "type": "slider",
+                "value": 0.1
+              },
+              "timeout": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Timeout",
+                "dynamic": false,
+                "info": "The timeout for requests to OpenAI completion API.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "timeout",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 700
+              }
+            },
+            "tool_mode": false
+          },
+          "selected_output": "text_output",
+          "showNode": true,
+          "type": "OpenAIModel"
+        },
+        "dragging": false,
+        "id": "OpenAIModel-DmJrk",
+        "measured": {
+          "height": 622,
+          "width": 320
+        },
+        "position": {
+          "x": -127.04591969530975,
+          "y": 141.9557948162153
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "Prompt-NnhMC",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {
+              "template": []
+            },
+            "description": "Create a prompt template with dynamic variables.",
+            "display_name": "Prompt",
+            "documentation": "",
+            "edited": false,
+            "error": null,
+            "field_order": [
+              "template",
+              "tool_placeholder"
+            ],
+            "frozen": false,
+            "full_path": null,
+            "icon": "prompts",
+            "is_composition": null,
+            "is_input": null,
+            "is_output": null,
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": false,
+            "name": "",
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Prompt Message",
+                "hidden": null,
+                "method": "build_prompt",
+                "name": "prompt",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "priority": null,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.prompts.api_utils import process_prompt_template\nfrom langflow.custom import Component\nfrom langflow.inputs.inputs import DefaultPromptField\nfrom langflow.io import MessageTextInput, Output, PromptInput\nfrom langflow.schema.message import Message\nfrom langflow.template.utils import update_template_values\n\n\nclass PromptComponent(Component):\n    display_name: str = \"Prompt\"\n    description: str = \"Create a prompt template with dynamic variables.\"\n    icon = \"prompts\"\n    trace_type = \"prompt\"\n    name = \"Prompt\"\n\n    inputs = [\n        PromptInput(name=\"template\", display_name=\"Template\"),\n        MessageTextInput(\n            name=\"tool_placeholder\",\n            display_name=\"Tool Placeholder\",\n            tool_mode=True,\n            advanced=True,\n            info=\"A placeholder input for tool mode.\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Prompt Message\", name=\"prompt\", method=\"build_prompt\"),\n    ]\n\n    async def build_prompt(self) -> Message:\n        prompt = Message.from_template(**self._attributes)\n        self.status = prompt.text\n        return prompt\n\n    def _update_template(self, frontend_node: dict):\n        prompt_template = frontend_node[\"template\"][\"template\"][\"value\"]\n        custom_fields = frontend_node[\"custom_fields\"]\n        frontend_node_template = frontend_node[\"template\"]\n        _ = process_prompt_template(\n            template=prompt_template,\n            name=\"template\",\n            custom_fields=custom_fields,\n            frontend_node_template=frontend_node_template,\n        )\n        return frontend_node\n\n    async def update_frontend_node(self, new_frontend_node: dict, current_frontend_node: dict):\n        \"\"\"This function is called after the code validation is done.\"\"\"\n        frontend_node = await super().update_frontend_node(new_frontend_node, current_frontend_node)\n        template = frontend_node[\"template\"][\"template\"][\"value\"]\n        # Kept it duplicated for backwards compatibility\n        _ = process_prompt_template(\n            template=template,\n            name=\"template\",\n            custom_fields=frontend_node[\"custom_fields\"],\n            frontend_node_template=frontend_node[\"template\"],\n        )\n        # Now that template is updated, we need to grab any values that were set in the current_frontend_node\n        # and update the frontend_node with those values\n        update_template_values(new_template=frontend_node, previous_template=current_frontend_node[\"template\"])\n        return frontend_node\n\n    def _get_fallback_input(self, **kwargs):\n        return DefaultPromptField(**kwargs)\n"
+              },
+              "template": {
+                "_input_type": "PromptInput",
+                "advanced": false,
+                "display_name": "Template",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "template",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "type": "prompt",
+                "value": "You are an intelligent agent that converts natural language into SQL queries for Presto.  \nYour ONLY job is to output a single valid SQL query wrapped in ```sql ... ```.\n\n⚠️ Rules:\n- Do not explain, do not apologize, do not refuse, and do not ask clarifying questions.\n- If information like year, store, or product type is not specified, write the best-effort aggregate query without those filters.\n- Always return only SQL code inside triple backticks with the \"sql\" label (no prose before/after).\n\n=== SCHEMA ===\n- Table retail.default.czech (productid, product, type, unitprice, unit, qty, totalsales, currency, store, country, year)\n- Table retail.default.swiss (productid, product, type, unitprice, unit, qty, totalsales, currency, store, country, year)\n- Table retail.default.germany (productid, product, type, unitprice, unit, qty, totalsales, currency, store, country, year)\n\n=== IMPORTANT COLUMN MAPPINGS ===\n- type ∈ ('vegetables','gardening','hardware','tools','fruits','woodworking','winter','jewelry','crafting')\n- unit ∈ ('piece','kg','liter','bottle')\n- country ∈ ('czech','swiss','germany')\n\n=== NORMALIZATION / ENTITY RESOLUTION ===\n- Map user country mentions (case-insensitive, multilingual):\n  - czech, czech republic, เช็ก, ประเทศเช็ก → retail.default.czech, country='Czech Republic'\n  - swiss, switzerland, สวิส, ประเทศสวิส → retail.default.swiss, country='Swiss'\n  - germany, german, เยอรมนี, ประเทศเยอรมนี → retail.default.germany, country='Germany'\n- If a country table exists (e.g., czech), you MUST ALWAYS omit the country filter because each table is already country-specific.\n- User may ask in Thai or English. You always output SQL only.\n\n=== TYPE SYNONYMS (TH/EN) ===\n- 'ผลไม้' / 'fruits' → type = 'fruits'\n- 'ผัก' / 'vegetables' → type = 'vegetables'\n- 'การดูแลสวน' / 'gardening' → type = 'gardening'\n- 'อุปกรณ์' / 'hardware' → type = 'hardware'\n- 'เครื่องมือ' / 'tools' → type = 'tools'\n- 'การทำไม้' / 'woodworking' → type = 'woodworking'\n- 'ฤดูหนาว' / 'winter' → type = 'winter'\n- 'อัญมณี' / 'jewelry' → type = 'jewelry'\n- 'การประดิษฐ์' / 'crafting' → type = 'crafting'\n\n=== UNIT SYNONYMS (TH/EN) ===\n- 'ชิ้น' / 'piece' → unit = 'piece'\n- 'กิโล' / 'กิโลกรัม' / 'กก.' / 'kg' → unit = 'kg'\n- 'ลิตร' / 'liter' → unit = 'liter'\n- 'ขวด' / 'bottle' → unit = 'bottle'\nRule: If the user mentions a specific unit, add `WHERE unit = '<mapped unit>'`. If no unit is mentioned, do not filter by unit.\n\n=== SEMANTIC MAPPING ===\n- \"จำนวน ... กี่ชิ้น/กี่อัน/how many items/quantity\" → use `SUM(qty)` (never `COUNT(*)`).\n- If the phrase also mentions a unit (e.g., ชิ้น), include the unit filter per UNIT SYNONYMS.\n- \"ยอดขาย / sales / total sales / มูลค่า\" → `SUM(totalsales)`\n- \"ราคาเฉลี่ย / average price\" → `AVG(unitprice)`\n- \"มากที่สุด / highest / top / อันดับ\" → add `ORDER BY ... DESC LIMIT 1` as requested.\n- top n -> include window function in each sub-query such as DENSE_RANK() over ( PARTITION BY ..... ORDER BY .....) WHERE RANK <= n \n\n=== YEAR LOCKING ===\n- If the question contains a specific year (e.g., 2022), apply `WHERE year = <that year>` in the relevant tables. Do not infer or change the year.\n\n=== MULTI-COUNTRY RULES ===\n- Do NOT JOIN across country tables.\n- Use UNION ALL to combine per-table aggregates. ALWAYS include all queries in parentheses in UNION ALL statements. For example (select a.fieldx from table1 as a) UNION ALL (select b.fieldy from table2 as b). Do NOT add any space between UNION ALL and rest of the statements above and below.  \n- ALWAYS wrap each subquery in parentheses and include GROUP BY when using aggregates.\n- Use table aliases (c, s, g). Make sure table aliases MATCH to the query definition. \n- When using ONE subquery then DO NOT use table aliases.\n\n=== MULTI-COUNTRY OUTPUT CONTRACT (CRITICAL) ===\n- If 2+ countries are mentioned, you MUST output a UNION ALL query with one subquery per table.\n- If a year is present, apply `WHERE year = <year>` in every subquery.\n- The final SQL MUST contain `UNION ALL` and the correct table names.\n- NEVER reinterpret as \"top\" unless words like \"top\", \"มากที่สุด\", \"highest\", \"อันดับ\" are explicitly mentioned.\n- Derive SQL only from the current User question: {{question}} (no intent carryover from prior turns).\n\n=== PRESTO FUNCTIONS / STYLE ===\n- date_diff('day', start_date, end_date)\n- date_add('day', 90, current_date)\n- date_add('month', 3, current_date)\n- current_date  (no parentheses)\n- Never use INTERVAL syntax.\n- Never use backticks. Use double quotes if needed.\n- Always guard divisions: `CASE WHEN denominator = 0 THEN 0 ELSE numerator/denominator END`\n- Use `COALESCE` for nulls.\n\n=== BEHAVIOR ===\n- If input is a generic greeting (hello/hi/สวัสดี), output the fixed query:\n\n```sql\nSELECT 'czech' AS table_name, COUNT(*) AS row_count FROM retail.default.czech\nUNION ALL\nSELECT 'swiss' AS table_name, COUNT(*) AS row_count FROM retail.default.swiss\nUNION ALL\nSELECT 'germany' AS table_name, COUNT(*) AS row_count FROM retail.default.germany;\n"
+              },
+              "tool_placeholder": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Tool Placeholder",
+                "dynamic": false,
+                "info": "A placeholder input for tool mode.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "tool_placeholder",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": true,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "Prompt"
+        },
+        "dragging": false,
+        "id": "Prompt-NnhMC",
+        "measured": {
+          "height": 284,
+          "width": 320
+        },
+        "position": {
+          "x": -521.6168686042879,
+          "y": 413.15234779498763
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "SimpleSQLParser-mHPx7",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Extract SQL query from markdown-formatted text",
+            "display_name": "Simple SQL Parser",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "input_text"
+            ],
+            "frozen": false,
+            "icon": "code",
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "SQL Query",
+                "hidden": null,
+                "method": "extract_sql",
+                "name": "sql_output",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "import re\nfrom langflow.custom import Component\nfrom langflow.io import MessageTextInput, Output\nfrom langflow.schema.message import Message\n\nclass SimpleSQLParserComponent(Component):\n    display_name = \"Simple SQL Parser\"\n    description = \"Extract SQL query from markdown-formatted text\"\n    icon = \"code\"\n    name = \"SimpleSQLParser\"\n    \n    inputs = [\n        MessageTextInput(\n            name=\"input_text\",\n            display_name=\"Input Text\",\n            info=\"Text containing SQL query in markdown format\",\n        ),\n    ]\n    \n    outputs = [\n        Output(display_name=\"SQL Query\", name=\"sql_output\", method=\"extract_sql\"),\n    ]\n    \n    def extract_sql(self) -> Message:\n        text = self.input_text\n        \n        # Extract SQL from ```sql ... ``` blocks\n        match = re.search(r'```sql\\s*(.*?)\\s*```', text, re.DOTALL)\n        \n        if match:\n            sql_query = match.group(1).strip()\n        else:\n            # Fallback: try ```...``` without sql keyword\n            match = re.search(r'```\\s*(.*?)\\s*```', text, re.DOTALL)\n            sql_query = match.group(1).strip() if match else text.strip()\n        \n        # Remove trailing semicolon for Presto compatibility\n        sql_query = sql_query.rstrip(';').strip()\n        \n        return Message(text=sql_query)"
+              },
+              "input_text": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Input Text",
+                "dynamic": false,
+                "info": "Text containing SQL query in markdown format",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "input_text",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "SimpleSQLParser"
+        },
+        "dragging": false,
+        "id": "SimpleSQLParser-mHPx7",
+        "measured": {
+          "height": 203,
+          "width": 320
+        },
+        "position": {
+          "x": 255.3483423321099,
+          "y": 361.38644336264616
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "PythonREPLComponent-SJBvz",
+          "node": {
+            "base_classes": [
+              "Data"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "A Python code executor that lets you run Python code with specific imported modules. Remember to always use print() to see your results. Example: print(df.head())",
+            "display_name": "Python REPL",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "global_imports",
+              "python_code",
+              "sql_query",
+              "jwt_token",
+              "refresh_token",
+              "secret_token",
+              "uadomain",
+              "presto_catalog",
+              "presto_schema",
+              "presto_user"
+            ],
+            "frozen": false,
+            "icon": "Python",
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Results",
+                "hidden": null,
+                "method": "run_python_repl",
+                "name": "results",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "import importlib\nimport subprocess\nimport sys\nfrom langchain_experimental.utilities import PythonREPL\nfrom langflow.custom import Component\nfrom langflow.io import CodeInput, Output, StrInput, SecretStrInput\nfrom langflow.schema import Data\n\nclass PythonREPLComponent(Component):\n    display_name = \"Python REPL\"\n    description = (\n        \"A Python code executor that lets you run Python code with specific imported modules. \"\n        \"Remember to always use print() to see your results. Example: print(df.head())\"\n    )\n    icon = \"Python\"\n    inputs = [\n        StrInput(\n            name=\"global_imports\",\n            display_name=\"Global Imports\",\n            info=\"A comma-separated list of modules to import globally, e.g. 'math,numpy,pandas,prestodb'.\",\n            value=\"math,pandas\",\n            required=True,\n        ),\n        CodeInput(\n            name=\"python_code\",\n            display_name=\"Python Code\",\n            info=\"The Python code to execute. Only modules specified in Global Imports can be used.\",\n            value=\"print('Hello, World!')\",\n            input_types=[\"Message\"],\n            tool_mode=True,\n            required=True,\n        ),\n        StrInput(\n            name=\"sql_query\",\n            display_name=\"SQL Query\",\n            info=\"SQL query to execute against Presto\",\n            value=\"\",\n            input_types=[\"Message\"],\n            required=False,\n        ),\n        SecretStrInput(\n            name=\"jwt_token\",\n            display_name=\"JWT Token\",\n            info=\"JWT token for Presto authentication\",\n            value=\"\",\n            required=False,\n        ),\n        SecretStrInput(\n            name=\"refresh_token\",\n            display_name=\"Refresh Token\",\n            info=\"Refresh token for Presto authentication\",\n            value=\"\",\n            required=False,\n        ),\n        SecretStrInput(\n            name=\"secret_token\",\n            display_name=\"Secret Token\",\n            info=\"Secret token for Presto authentication\",\n            value=\"\",\n            required=False,\n        ),\n        StrInput(\n            name=\"uadomain\",\n            display_name=\"Domain for this AIE\",\n            info=\"Domain of this instance\",\n            value=\"\",\n            required=False,\n        ),\n        StrInput(\n            name=\"presto_catalog\",\n            display_name=\"Presto Catalog\",\n            info=\"Presto catalog name\",\n            value=\"finance\",\n            required=False,\n        ),\n        StrInput(\n            name=\"presto_schema\",\n            display_name=\"Presto Schema\",\n            info=\"Presto schema name\",\n            value=\"banking\",\n            required=False,\n        ),\n        StrInput(\n            name=\"presto_user\",\n            display_name=\"Presto User\",\n            info=\"Presto user name\",\n            value=\"admin\",\n            required=False,\n        ),\n    ]\n    outputs = [\n        Output(\n            display_name=\"Results\",\n            name=\"results\",\n            type_=Data,\n            method=\"run_python_repl\",\n        ),\n    ]\n\n    def install_package(self, package_name: str) -> bool:\n        \"\"\"Install a package using pip if it's not already installed.\"\"\"\n        try:\n            self.log(f\"Attempting to install package: {package_name}\")\n            subprocess.check_call([\n                \"pip3\", \"install\", \"--user\", \"presto-python-client\"\n            ])\n            self.log(f\"Successfully installed presto-python-client\")\n            return True\n        except subprocess.CalledProcessError as e:\n            self.log(f\"Failed to install presto-python-client: {e}\")\n            return False\n\n    def get_globals(self, global_imports: str | list[str]) -> dict:\n        \"\"\"Create a globals dictionary with only the specified allowed imports.\"\"\"\n        global_dict = {}\n        try:\n            if isinstance(global_imports, str):\n                modules = [module.strip() for module in global_imports.split(\",\")]\n            elif isinstance(global_imports, list):\n                modules = global_imports\n            else:\n                msg = \"global_imports must be either a string or a list\"\n                raise TypeError(msg)\n            \n            for module in modules:\n                try:\n                    imported_module = importlib.import_module(module)\n                    global_dict[imported_module.__name__] = imported_module\n                except ImportError as e:\n                    if module == \"prestodb\":\n                        self.log(f\"Module {module} not found, attempting to install presto-python-client...\")\n                        \n                        # Try to install the package\n                        if self.install_package(module):\n                            try:\n                                # Try importing again after installation\n                                imported_module = importlib.import_module(module)\n                                global_dict[imported_module.__name__] = imported_module\n                                self.log(f\"Successfully imported {module} after installation\")\n                            except ImportError as retry_e:\n                                msg = f\"Could not import module {module} even after installation: {retry_e!s}\"\n                                raise ImportError(msg) from retry_e\n                        else:\n                            msg = f\"Could not install or import module {module}: {e!s}\"\n                            raise ImportError(msg) from e\n                    else:\n                        msg = f\"Could not import module {module}: {e!s}\"\n                        raise ImportError(msg) from e\n                        \n        except Exception as e:\n            self.log(f\"Error in global imports: {e!s}\")\n            raise\n        else:\n            self.log(f\"Successfully imported modules: {list(global_dict.keys())}\")\n            return global_dict\n\n    def run_python_repl(self) -> Data:\n        try:\n            # Extract text from Message object if needed (for python_code)\n            if hasattr(self.python_code, 'text'):\n                code_to_execute = self.python_code.text\n            elif hasattr(self.python_code, 'content'):\n                code_to_execute = self.python_code.content\n            elif isinstance(self.python_code, str):\n                code_to_execute = self.python_code\n            else:\n                code_to_execute = str(self.python_code)\n            \n            # Extract SQL query from the new input\n            if hasattr(self.sql_query, 'text'):\n                sql_to_execute = self.sql_query.text\n            elif hasattr(self.sql_query, 'content'):\n                sql_to_execute = self.sql_query.content\n            elif isinstance(self.sql_query, str):\n                sql_to_execute = self.sql_query\n            else:\n                sql_to_execute = str(self.sql_query)\n            \n            # Extract token and Presto configuration\n            jwt_token = self.jwt_token if self.jwt_token else \"\"\n            refresh_token = self.refresh_token\n            secret_token = self.secret_token\n            presto_catalog = self.presto_catalog if self.presto_catalog else \"finance\"\n            presto_schema = self.presto_schema if self.presto_schema else \"banking\"\n            presto_user = self.presto_user if self.presto_user else \"admin\"\n            uadomain = self.uadomain\n            \n            self.log(f\"SQL to execute: {sql_to_execute}\")\n            self.log(f\"Code to execute: {code_to_execute[:100]}...\")\n            self.log(f\"JWT token provided: {'Yes' if jwt_token else 'No'}\")\n            self.log(f\"Refresh token provided: {'Yes' if refresh_token else 'No'}\")\n            self.log(f\"Secret token provided: {'Yes' if secret_token else 'No'}\")\n            self.log(f\"Domain provided: {'Yes' if uadomain else 'No'}\")\n            self.log(f\"Presto config - Catalog: {presto_catalog}, Schema: {presto_schema}, User: {presto_user}\")\n            \n            \n            globals_ = self.get_globals(self.global_imports)\n            globals_['sql_query'] = sql_to_execute  # Make SQL available to Python code\n            globals_['jwt_token'] = jwt_token  # Make JWT token available to Python code\n            globals_['secret_token'] = secret_token \n            globals_['refresh_token'] = refresh_token\n            globals_['uadomain'] = uadomain\n            globals_['presto_catalog'] = presto_catalog  # Make catalog available\n            globals_['presto_schema'] = presto_schema  # Make schema available\n            globals_['presto_user'] = presto_user  # Make user available\n            \n            python_repl = PythonREPL(_globals=globals_)\n            result = python_repl.run(code_to_execute)\n            self.log(result)\n            result = result.strip() if result else \"\"\n            self.log(\"Code execution completed successfully\")\n            return Data(data={\"result\": result})\n        except ImportError as e:\n            error_message = f\"Import Error: {e!s}\"\n            self.log(error_message)\n            return Data(data={\"error\": error_message})\n        except SyntaxError as e:\n            error_message = f\"Syntax Error: {e!s}\"\n            self.log(error_message)\n            return Data(data={\"error\": error_message})\n        except (NameError, TypeError, ValueError) as e:\n            error_message = f\"Error during execution: {e!s}\"\n            self.log(error_message)\n            return Data(data={\"error\": error_message})\n\n    def build(self):\n        return self.run_python_repl"
+              },
+              "global_imports": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Global Imports",
+                "dynamic": false,
+                "info": "A comma-separated list of modules to import globally, e.g. 'math,numpy,pandas,prestodb'.",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "global_imports",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "requests,json,time,urllib3,os"
+              },
+              "jwt_token": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "JWT Token",
+                "dynamic": false,
+                "info": "JWT token for Presto authentication",
+                "input_types": [],
+                "load_from_db": false,
+                "name": "jwt_token",
+                "password": true,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": ""
+              },
+              "presto_catalog": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Presto Catalog",
+                "dynamic": false,
+                "info": "Presto catalog name",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "presto_catalog",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "retail"
+              },
+              "presto_schema": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Presto Schema",
+                "dynamic": false,
+                "info": "Presto schema name",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "presto_schema",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "default"
+              },
+              "presto_user": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Presto User",
+                "dynamic": false,
+                "info": "Presto user name",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "presto_user",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "admin"
+              },
+              "python_code": {
+                "_input_type": "CodeInput",
+                "advanced": false,
+                "display_name": "Python Code",
+                "dynamic": false,
+                "info": "The Python code to execute. Only modules specified in Global Imports can be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "python_code",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": true,
+                "trace_as_input": true,
+                "type": "code",
+                "value": "import requests\nimport json\nimport time\nimport urllib3\nimport os\n\n\n# Disable SSL warnings\nurllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)\n\n# refresh token for each call\ndef get_token(refresh_token, secret_token, uadomain):\n    UA_DOMAIN= uadomain\n    KC_ADDR=f\"keycloak.{UA_DOMAIN}\"\n\n    payload_refresh = {\n        \"grant_type\": \"refresh_token\",\n        \"client_id\": \"ua\",\n        \"refresh_token\": refresh_token,\n        \"client_secret\": secret_token\n    }\n    # ignore certs\n    results = requests.post(f\"https://{KC_ADDR}/realms/UA/protocol/openid-connect/token\", data=payload_refresh, verify=False)\n    #print(results)\n    ACCESS_TOKEN = results.json()['access_token']\n    #print(ACCESS_TOKEN)\n    return(ACCESS_TOKEN)\n\n\ndef query_prestodb(sql_query):\n    # Use the variables passed from the component\n    token = jwt_token #if jwt_token else \"default_token_here\"\n    catalog = presto_catalog #if presto_catalog else \"finance\"\n    schema = presto_schema #if presto_schema else \"banking\"\n    user = presto_user if presto_user else \"admin\"\n    \n    #print(\"SQL\")\n    #print(sql_query)\n    #print(\"token\")\n    #print(token)\n    #print(\"ENV: refresh token\")\n    #print(refresh_token)\n    #print(\"ENV: secret token\")\n    #print(secret_token)\n    \n    if(secret_token and refresh_token):\n        #token = get_token(refresh_token, secret_token, uadomain)\n        UA_DOMAIN= uadomain\n        KC_ADDR=f\"keycloak.{UA_DOMAIN}\"\n\n        payload_refresh = {\n            \"grant_type\": \"refresh_token\",\n            \"client_id\": \"ua\",\n            \"refresh_token\": refresh_token,\n            \"client_secret\": secret_token\n        }\n        # ignore certs\n        results = requests.post(f\"https://{KC_ADDR}/realms/UA/protocol/openid-connect/token\", data=payload_refresh, verify=False)\n        print(f\"token request: {results}\",results)\n        token = results.json()['access_token']\n        print(token)\n    \n    # Submit query\n    response = requests.post(\n        'https://ezpresto-sts-mst-0.ezpresto-svc-hdl.ezpresto.svc.cluster.local:8081/v1/statement',\n        headers={\n            'Authorization': f'Bearer {token}',\n            'X-Presto-Catalog': catalog,\n            'X-Presto-Schema': schema,\n            'X-Presto-User': user,\n            'Content-Type': 'text/plain'\n        },\n        data=sql_query,\n        verify=False\n    )\n    \n    \n    print(\"RESPONSE\")\n    print(response)\n    \n    \n    parsed_response = response.json()\n    \n    # Check for errors in the initial response\n    if 'error' in parsed_response:\n        print(f\"Received Response: {response}\" )\n        print(f\"Query error: {parsed_response['error']}\")\n        return {'error': parsed_response['error'], 'columns': [], 'data': [], 'row_count': 0}\n    \n    attempts = 0\n    max_attempts = 10\n    all_data = []\n    \n    # Poll for results\n    while parsed_response.get('nextUri') and attempts < max_attempts:\n        time.sleep(0.5)  # Wait 500ms\n        \n        results_response = requests.get(\n            parsed_response['nextUri'],\n            headers={\n                'Authorization': f'Bearer {token}',\n                'X-Presto-User': user\n            },\n            verify=False\n        )\n        \n        parsed_response = results_response.json()\n        \n        # Check for errors in polling responses\n        if 'error' in parsed_response:\n            print(f\"Polling error: {parsed_response['error']}\")\n            break\n        \n        # Collect data if available\n        if 'data' in parsed_response:\n            all_data.extend(parsed_response['data'])\n        \n        attempts += 1\n    \n    return {\n        'columns': parsed_response.get('columns', []),\n        'data': all_data,\n        'row_count': len(all_data),\n        'final_state': parsed_response.get('stats', {}).get('state', 'unknown')\n    }\n\n# Execute query\ntry:\n    result = query_prestodb(sql_query)\n    \n    print(f\"Query completed successfully!\")\n    print(f\"State: {result['final_state']}\")\n    print(f\"Row count: {result['row_count']}\")\n    print(f\"Columns: {[col['name'] for col in result['columns']]}\")\n    print(\"\\nData:\")\n    # Show ALL rows\n    for i, row in enumerate(result['data']):\n        print(f\"Row {i+1}: {row}\")\n        \nexcept Exception as e:\n    print(f\"Query failed: {e}\")"
+              },
+              "refresh_token": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "Refresh Token",
+                "dynamic": false,
+                "info": "Refresh token for Presto authentication",
+                "input_types": [],
+                "load_from_db": true,
+                "name": "refresh_token",
+                "password": true,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": "AIE19_REFRESH_TOKEN_0113"
+              },
+              "secret_token": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "Secret Token",
+                "dynamic": false,
+                "info": "Secret token for Presto authentication",
+                "input_types": [],
+                "load_from_db": true,
+                "name": "secret_token",
+                "password": true,
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": "AIE19_OIDC_CLIENT_SECRET"
+              },
+              "sql_query": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "SQL Query",
+                "dynamic": false,
+                "info": "SQL query to execute against Presto",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sql_query",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "uadomain": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Domain for this AIE",
+                "dynamic": false,
+                "info": "Domain of this instance",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "uadomain",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "aie19.aie.sg"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "PythonREPLComponent"
+        },
+        "dragging": false,
+        "id": "PythonREPLComponent-SJBvz",
+        "measured": {
+          "height": 1002,
+          "width": 320
+        },
+        "position": {
+          "x": 617.6236696292228,
+          "y": -465.15106963884324
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "DataInterpreter-Fvzdz",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Interprets database query results and provides natural language explanations.",
+            "display_name": "Data Interpreter",
+            "documentation": "",
+            "edited": true,
+            "field_order": [
+              "query_results",
+              "original_question",
+              "system_prompt",
+              "api_key",
+              "model_name",
+              "openai_api_base",
+              "max_tokens",
+              "temperature"
+            ],
+            "frozen": false,
+            "icon": "MessageSquare",
+            "last_updated": "2025-10-02T04:11:49.760Z",
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Interpretation",
+                "hidden": null,
+                "method": "interpret_data",
+                "name": "interpretation",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "api_key": {
+                "_input_type": "SecretStrInput",
+                "advanced": false,
+                "display_name": "OpenAI API Key",
+                "dynamic": false,
+                "info": "The OpenAI API Key to use for interpretation.",
+                "input_types": [],
+                "load_from_db": true,
+                "name": "api_key",
+                "password": true,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": "PCAI_LLM_GPT_OSS_20b_TOKEN"
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from typing import Any\nfrom langchain_openai import ChatOpenAI\nfrom pydantic.v1 import SecretStr\nfrom langflow.base.models.model import LCModelComponent\nfrom langflow.base.models.openai_constants import (\n    OPENAI_MODEL_NAMES,\n    OPENAI_REASONING_MODEL_NAMES,\n)\nfrom langflow.field_typing import LanguageModel\nfrom langflow.field_typing.range_spec import RangeSpec\nfrom langflow.inputs import BoolInput, DictInput, DropdownInput, IntInput, SecretStrInput, SliderInput, StrInput, DataInput, MessageTextInput\nfrom langflow.io import Output\nfrom langflow.schema.message import Message\nfrom langflow.schema import Data\nfrom langflow.logging import logger\n\n\nclass DataInterpreterComponent(LCModelComponent):\n    display_name = \"Data Interpreter\"\n    description = \"Interprets database query results and provides natural language explanations.\"\n    icon = \"MessageSquare\"\n    name = \"DataInterpreter\"\n\n    inputs = [\n        DataInput(\n            name=\"query_results\",\n            display_name=\"Query Results\",\n            info=\"Results from database query execution\",\n            required=True,\n        ),\n        MessageTextInput(\n            name=\"original_question\",\n            display_name=\"Original Question\",\n            info=\"The original user question that generated the query\",\n            required=False,\n        ),\n        MessageTextInput(\n            name=\"system_prompt\",\n            display_name=\"System Prompt\",\n            info=\"Custom system prompt for data interpretation (optional)\",\n            required=False,\n        ),\n        SecretStrInput(\n            name=\"api_key\",\n            display_name=\"OpenAI API Key\",\n            info=\"The OpenAI API Key to use for interpretation.\",\n            advanced=False,\n            value=\"OPENAI_API_KEY\",\n            required=True,\n        ),\n        DropdownInput(\n            name=\"model_name\",\n            display_name=\"Model Name\",\n            advanced=False,\n            options=OPENAI_MODEL_NAMES + OPENAI_REASONING_MODEL_NAMES,\n            value=OPENAI_MODEL_NAMES[1],\n            combobox=True,\n            real_time_refresh=True,\n        ),\n        StrInput(\n            name=\"openai_api_base\",\n            display_name=\"OpenAI API Base\",\n            advanced=True,\n            info=\"The base URL of the OpenAI API. \"\n            \"Defaults to https://api.openai.com/v1. \"\n            \"You can change this to use other APIs like JinaChat, LocalAI and Prem.\",\n        ),\n        IntInput(\n            name=\"max_tokens\",\n            display_name=\"Max Tokens\",\n            advanced=True,\n            info=\"The maximum number of tokens to generate for the interpretation.\",\n            value=1000,\n            range_spec=RangeSpec(min=100, max=4000),\n        ),\n        SliderInput(\n            name=\"temperature\",\n            display_name=\"Temperature\",\n            value=0.1,\n            range_spec=RangeSpec(min=0, max=1, step=0.01),\n            advanced=True,\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Interpretation\", name=\"interpretation\", method=\"interpret_data\"),\n    ]\n\n    def interpret_data(self) -> Message:\n        try:\n            # Extract the query results\n            if hasattr(self.query_results, 'data'):\n                results_data = self.query_results.data\n            else:\n                results_data = self.query_results\n\n            # Get the original question if provided\n            original_question = \"\"\n            if self.original_question:\n                if hasattr(self.original_question, 'text'):\n                    original_question = self.original_question.text\n                else:\n                    original_question = str(self.original_question)\n\n            # Get custom system prompt if provided, otherwise use default\n            if self.system_prompt:\n                if hasattr(self.system_prompt, 'text'):\n                    system_prompt = self.system_prompt.text\n                else:\n                    system_prompt = str(self.system_prompt)\n            else:\n                system_prompt = \"\"\"You are a data analyst that explains database query results in clear, natural language.\n\nYour task is to:\n1. Analyze the query results and present them in a conversational, easy-to-understand format\n2. Provide context and insights when appropriate\n3. Format numbers clearly (use commas for large numbers, currency symbols for money)\n4. If there are multiple results, summarize key findings\n5. Be concise but informative\n\nGuidelines:\n- For COUNT queries: \"There are X records\" or \"I found X items\"\n- For totals: Format as currency with proper commas\n- For lists: Present in a readable format\n- For empty results: \"No results found\" with context\n- Always be conversational and helpful\"\"\"\n\n            # Extract the result string from the data\n            if isinstance(results_data, dict) and 'result' in results_data:\n                result_str = results_data['result']\n            else:\n                result_str = str(results_data)\n\n            user_prompt = f\"\"\"Original question: \"{original_question}\"\n\nQuery results:\n{result_str}\n\nPlease interpret these results and provide a clear, natural language explanation.\"\"\"\n\n            # Set up the LLM\n            import httpx\n            http_client = httpx.Client(verify=False)\n            \n            llm = ChatOpenAI(\n                api_key=SecretStr(self.api_key).get_secret_value() if self.api_key else None,\n                model_name=self.model_name,\n                base_url=self.openai_api_base or \"https://api.openai.com/v1\",\n                temperature=self.temperature,\n                max_tokens=None,\n                http_client=http_client\n            )\n\n            # Generate the interpretation\n            messages = [\n                {\"role\": \"system\", \"content\": system_prompt},\n                {\"role\": \"user\", \"content\": user_prompt}\n            ]\n            \n            response = llm.invoke(messages)\n            interpretation = response.content\n\n            return Message(text=interpretation)\n\n        except Exception as e:\n            error_msg = f\"Error interpreting data: {str(e)}\"\n            logger.error(error_msg)\n            return Message(text=error_msg)"
+              },
+              "max_tokens": {
+                "_input_type": "IntInput",
+                "advanced": true,
+                "display_name": "Max Tokens",
+                "dynamic": false,
+                "info": "The maximum number of tokens to generate for the interpretation.",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "max_tokens",
+                "placeholder": "",
+                "range_spec": {
+                  "max": 4000,
+                  "min": 100,
+                  "step": 0.1,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "int",
+                "value": 100
+              },
+              "model_name": {
+                "_input_type": "DropdownInput",
+                "advanced": false,
+                "combobox": true,
+                "dialog_inputs": {},
+                "display_name": "Model Name",
+                "dynamic": false,
+                "info": "",
+                "load_from_db": false,
+                "name": "model_name",
+                "options": [
+                  "gpt-4o-mini",
+                  "gpt-4o",
+                  "gpt-4.1",
+                  "gpt-4.1-mini",
+                  "gpt-4.1-nano",
+                  "gpt-4.5-preview",
+                  "gpt-4-turbo",
+                  "gpt-4-turbo-preview",
+                  "gpt-4",
+                  "gpt-3.5-turbo",
+                  "o1"
+                ],
+                "options_metadata": [],
+                "placeholder": "",
+                "real_time_refresh": true,
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "openai/gpt-oss-20b"
+              },
+              "openai_api_base": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "OpenAI API Base",
+                "dynamic": false,
+                "info": "The base URL of the OpenAI API. Defaults to https://api.openai.com/v1. You can change this to use other APIs like JinaChat, LocalAI and Prem.",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": true,
+                "name": "openai_api_base",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "PCAI_LLM_GPT_OSS_20b"
+              },
+              "original_question": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "Original Question",
+                "dynamic": false,
+                "info": "The original user question that generated the query",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "original_question",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "query_results": {
+                "_input_type": "DataInput",
+                "advanced": false,
+                "display_name": "Query Results",
+                "dynamic": false,
+                "info": "Results from database query execution",
+                "input_types": [
+                  "Data"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "query_results",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "system_prompt": {
+                "_input_type": "MessageTextInput",
+                "advanced": false,
+                "display_name": "System Prompt",
+                "dynamic": false,
+                "info": "Custom system prompt for data interpretation (optional)",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "system_prompt",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "temperature": {
+                "_input_type": "SliderInput",
+                "advanced": true,
+                "display_name": "Temperature",
+                "dynamic": false,
+                "info": "",
+                "max_label": "",
+                "max_label_icon": "",
+                "min_label": "",
+                "min_label_icon": "",
+                "name": "temperature",
+                "placeholder": "",
+                "range_spec": {
+                  "max": 1,
+                  "min": 0,
+                  "step": 0.01,
+                  "step_type": "float"
+                },
+                "required": false,
+                "show": true,
+                "slider_buttons": false,
+                "slider_buttons_options": [],
+                "slider_input": false,
+                "title_case": false,
+                "tool_mode": false,
+                "type": "slider",
+                "value": 0.1
+              }
+            },
+            "tool_mode": false
+          },
+          "selected_output": "text_output",
+          "showNode": true,
+          "type": "DataInterpreter"
+        },
+        "dragging": false,
+        "id": "DataInterpreter-Fvzdz",
+        "measured": {
+          "height": 595,
+          "width": 320
+        },
+        "position": {
+          "x": 1071.3712362432955,
+          "y": 187.44616820165098
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "Prompt-pUGgn",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {
+              "template": []
+            },
+            "description": "Create a prompt template with dynamic variables.",
+            "display_name": "Prompt",
+            "documentation": "",
+            "edited": false,
+            "error": null,
+            "field_order": [
+              "template",
+              "tool_placeholder"
+            ],
+            "frozen": false,
+            "full_path": null,
+            "icon": "prompts",
+            "is_composition": null,
+            "is_input": null,
+            "is_output": null,
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": false,
+            "name": "",
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Prompt Message",
+                "hidden": null,
+                "method": "build_prompt",
+                "name": "prompt",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "priority": null,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.prompts.api_utils import process_prompt_template\nfrom langflow.custom import Component\nfrom langflow.inputs.inputs import DefaultPromptField\nfrom langflow.io import MessageTextInput, Output, PromptInput\nfrom langflow.schema.message import Message\nfrom langflow.template.utils import update_template_values\n\n\nclass PromptComponent(Component):\n    display_name: str = \"Prompt\"\n    description: str = \"Create a prompt template with dynamic variables.\"\n    icon = \"prompts\"\n    trace_type = \"prompt\"\n    name = \"Prompt\"\n\n    inputs = [\n        PromptInput(name=\"template\", display_name=\"Template\"),\n        MessageTextInput(\n            name=\"tool_placeholder\",\n            display_name=\"Tool Placeholder\",\n            tool_mode=True,\n            advanced=True,\n            info=\"A placeholder input for tool mode.\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Prompt Message\", name=\"prompt\", method=\"build_prompt\"),\n    ]\n\n    async def build_prompt(self) -> Message:\n        prompt = Message.from_template(**self._attributes)\n        self.status = prompt.text\n        return prompt\n\n    def _update_template(self, frontend_node: dict):\n        prompt_template = frontend_node[\"template\"][\"template\"][\"value\"]\n        custom_fields = frontend_node[\"custom_fields\"]\n        frontend_node_template = frontend_node[\"template\"]\n        _ = process_prompt_template(\n            template=prompt_template,\n            name=\"template\",\n            custom_fields=custom_fields,\n            frontend_node_template=frontend_node_template,\n        )\n        return frontend_node\n\n    async def update_frontend_node(self, new_frontend_node: dict, current_frontend_node: dict):\n        \"\"\"This function is called after the code validation is done.\"\"\"\n        frontend_node = await super().update_frontend_node(new_frontend_node, current_frontend_node)\n        template = frontend_node[\"template\"][\"template\"][\"value\"]\n        # Kept it duplicated for backwards compatibility\n        _ = process_prompt_template(\n            template=template,\n            name=\"template\",\n            custom_fields=frontend_node[\"custom_fields\"],\n            frontend_node_template=frontend_node[\"template\"],\n        )\n        # Now that template is updated, we need to grab any values that were set in the current_frontend_node\n        # and update the frontend_node with those values\n        update_template_values(new_template=frontend_node, previous_template=current_frontend_node[\"template\"])\n        return frontend_node\n\n    def _get_fallback_input(self, **kwargs):\n        return DefaultPromptField(**kwargs)\n"
+              },
+              "template": {
+                "_input_type": "PromptInput",
+                "advanced": false,
+                "display_name": "Template",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "template",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "type": "prompt",
+                "value": "You are a natural language interface that interprets query results from a retail sales database.\n\nInstruction priority:\n1) Always clearly state the essential information from {{query_data}}.\n2) Respond in the same language as the user’s latest message ({{original_question}}).\n3) Keep answers concise (2–3 sentences) but natural and polite.\n\nPresentation rules:\n- Format numbers with commas.\n- If the result is a single value → state it clearly in one sentence only. Do not repeat the same number in multiple phrasings, and do not convert units (e.g., to “millions”).\n- If the result has multiple rows → use a clean table. Provide at most one short natural summary after the table if helpful, but do not restate the same values outside the table.\n- Do not add extra analysis, rankings, or speculation beyond what is asked.\n- Do NOT add dollar signs or interpret any currency. Simply present the comma formatted numbers WITHOUT any currency symbols.\n\nStyle:\n- Tone should be professional yet approachable (as if explaining to a colleague).\n- Avoid robotic wording like “Here are the results:”.\n- No greeting unless the user greets first.\n\nUncertainty handling:\n- If {{query_data}} is empty or incomplete, say:\n  \"No data found as requested. This might be because the time period or conditions are incomplete, or it could be related to access rights or connection. You might try checking the token or running the query again.\"\n- If the question is ambiguous, politely ask for clarification.\n\nOutput format:\n1) Answer (single sentence or table, depending on the data shape)\n2) (Optional) one-sentence summary, but only if it adds clarity without repeating the same numbers\n\nUser’s question: {{original_question}}  \nQuery results: {{query_data}}\n"
+              },
+              "tool_placeholder": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Tool Placeholder",
+                "dynamic": false,
+                "info": "A placeholder input for tool mode.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "tool_placeholder",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": true,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "Prompt"
+        },
+        "dragging": false,
+        "id": "Prompt-pUGgn",
+        "measured": {
+          "height": 284,
+          "width": 320
+        },
+        "position": {
+          "x": 626.0188077018558,
+          "y": 592.0184902697445
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "ChatInput-mPGxE",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "category": "inputs",
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Get chat inputs from the Playground.",
+            "display_name": "Chat Input",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value",
+              "should_store_message",
+              "sender",
+              "sender_name",
+              "session_id",
+              "files",
+              "background_color",
+              "chat_icon",
+              "text_color"
+            ],
+            "frozen": false,
+            "icon": "MessagesSquare",
+            "key": "ChatInput",
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": true,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "method": "message_response",
+                "name": "message",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "score": 0.0020353564437605998,
+            "template": {
+              "_type": "Component",
+              "background_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Background Color",
+                "dynamic": false,
+                "info": "The background color of the icon.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "background_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "chat_icon": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Icon",
+                "dynamic": false,
+                "info": "The icon of the message.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "chat_icon",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.data.utils import IMG_FILE_TYPES, TEXT_FILE_TYPES\nfrom langflow.base.io.chat import ChatComponent\nfrom langflow.inputs import BoolInput\nfrom langflow.io import (\n    DropdownInput,\n    FileInput,\n    MessageTextInput,\n    MultilineInput,\n    Output,\n)\nfrom langflow.schema.message import Message\nfrom langflow.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_USER,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatInput(ChatComponent):\n    display_name = \"Chat Input\"\n    description = \"Get chat inputs from the Playground.\"\n    icon = \"MessagesSquare\"\n    name = \"ChatInput\"\n    minimized = True\n\n    inputs = [\n        MultilineInput(\n            name=\"input_value\",\n            display_name=\"Text\",\n            value=\"\",\n            info=\"Message to be passed as input.\",\n            input_types=[],\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_USER,\n            info=\"Type of sender.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_USER,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        FileInput(\n            name=\"files\",\n            display_name=\"Files\",\n            file_types=TEXT_FILE_TYPES + IMG_FILE_TYPES,\n            info=\"Files to be sent with the message.\",\n            advanced=True,\n            is_list=True,\n            temp_file=True,\n        ),\n        MessageTextInput(\n            name=\"background_color\",\n            display_name=\"Background Color\",\n            info=\"The background color of the icon.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"chat_icon\",\n            display_name=\"Icon\",\n            info=\"The icon of the message.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"text_color\",\n            display_name=\"Text Color\",\n            info=\"The text color of the name\",\n            advanced=True,\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Message\", name=\"message\", method=\"message_response\"),\n    ]\n\n    async def message_response(self) -> Message:\n        background_color = self.background_color\n        text_color = self.text_color\n        icon = self.chat_icon\n\n        message = await Message.create(\n            text=self.input_value,\n            sender=self.sender,\n            sender_name=self.sender_name,\n            session_id=self.session_id,\n            files=self.files,\n            properties={\n                \"background_color\": background_color,\n                \"text_color\": text_color,\n                \"icon\": icon,\n            },\n        )\n        if self.session_id and isinstance(message, Message) and self.should_store_message:\n            stored_message = await self.send_message(\n                message,\n            )\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n"
+              },
+              "files": {
+                "_input_type": "FileInput",
+                "advanced": true,
+                "display_name": "Files",
+                "dynamic": false,
+                "fileTypes": [
+                  "txt",
+                  "md",
+                  "mdx",
+                  "csv",
+                  "json",
+                  "yaml",
+                  "yml",
+                  "xml",
+                  "html",
+                  "htm",
+                  "pdf",
+                  "docx",
+                  "py",
+                  "sh",
+                  "sql",
+                  "js",
+                  "ts",
+                  "tsx",
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "bmp",
+                  "image"
+                ],
+                "file_path": "",
+                "info": "Files to be sent with the message.",
+                "list": true,
+                "list_add_label": "Add More",
+                "name": "files",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "temp_file": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "file",
+                "value": ""
+              },
+              "input_value": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Text",
+                "dynamic": false,
+                "info": "Message to be passed as input.",
+                "input_types": [],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "input_value",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "sender": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Sender Type",
+                "dynamic": false,
+                "info": "Type of sender.",
+                "name": "sender",
+                "options": [
+                  "Machine",
+                  "User"
+                ],
+                "options_metadata": [],
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "User"
+              },
+              "sender_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender Name",
+                "dynamic": false,
+                "info": "Name of the sender.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "User"
+              },
+              "session_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Session ID",
+                "dynamic": false,
+                "info": "The session ID of the chat. If empty, the current session ID parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "session_id",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "should_store_message": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Store Messages",
+                "dynamic": false,
+                "info": "Store the message in the history.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "should_store_message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "text_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Text Color",
+                "dynamic": false,
+                "info": "The text color of the name",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "text_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": false,
+          "type": "ChatInput"
+        },
+        "dragging": false,
+        "id": "ChatInput-mPGxE",
+        "measured": {
+          "height": 48,
+          "width": 192
+        },
+        "position": {
+          "x": -471.13147315199365,
+          "y": -21.513640072216965
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "ChatOutput-dQC1H",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Display a chat message in the Playground.",
+            "display_name": "Chat Output",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value",
+              "should_store_message",
+              "sender",
+              "sender_name",
+              "session_id",
+              "data_template",
+              "background_color",
+              "chat_icon",
+              "text_color",
+              "clean_data"
+            ],
+            "frozen": false,
+            "icon": "MessagesSquare",
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": true,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "method": "message_response",
+                "name": "message",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "background_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Background Color",
+                "dynamic": false,
+                "info": "The background color of the icon.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "background_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "chat_icon": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Icon",
+                "dynamic": false,
+                "info": "The icon of the message.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "chat_icon",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "clean_data": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Basic Clean Data",
+                "dynamic": false,
+                "info": "Whether to clean the data",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "clean_data",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from collections.abc import Generator\nfrom typing import Any\n\nfrom langflow.base.io.chat import ChatComponent\nfrom langflow.inputs import BoolInput\nfrom langflow.inputs.inputs import HandleInput\nfrom langflow.io import DropdownInput, MessageTextInput, Output\nfrom langflow.schema.data import Data\nfrom langflow.schema.dataframe import DataFrame\nfrom langflow.schema.message import Message\nfrom langflow.schema.properties import Source\nfrom langflow.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_AI,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatOutput(ChatComponent):\n    display_name = \"Chat Output\"\n    description = \"Display a chat message in the Playground.\"\n    icon = \"MessagesSquare\"\n    name = \"ChatOutput\"\n    minimized = True\n\n    inputs = [\n        HandleInput(\n            name=\"input_value\",\n            display_name=\"Text\",\n            info=\"Message to be passed as output.\",\n            input_types=[\"Data\", \"DataFrame\", \"Message\"],\n            required=True,\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_AI,\n            advanced=True,\n            info=\"Type of sender.\",\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_AI,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"data_template\",\n            display_name=\"Data Template\",\n            value=\"{text}\",\n            advanced=True,\n            info=\"Template to convert Data to Text. If left empty, it will be dynamically set to the Data's text key.\",\n        ),\n        MessageTextInput(\n            name=\"background_color\",\n            display_name=\"Background Color\",\n            info=\"The background color of the icon.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"chat_icon\",\n            display_name=\"Icon\",\n            info=\"The icon of the message.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"text_color\",\n            display_name=\"Text Color\",\n            info=\"The text color of the name\",\n            advanced=True,\n        ),\n        BoolInput(\n            name=\"clean_data\",\n            display_name=\"Basic Clean Data\",\n            value=True,\n            info=\"Whether to clean the data\",\n            advanced=True,\n        ),\n    ]\n    outputs = [\n        Output(\n            display_name=\"Message\",\n            name=\"message\",\n            method=\"message_response\",\n        ),\n    ]\n\n    def _build_source(self, id_: str | None, display_name: str | None, source: str | None) -> Source:\n        source_dict = {}\n        if id_:\n            source_dict[\"id\"] = id_\n        if display_name:\n            source_dict[\"display_name\"] = display_name\n        if source:\n            # Handle case where source is a ChatOpenAI object\n            if hasattr(source, \"model_name\"):\n                source_dict[\"source\"] = source.model_name\n            elif hasattr(source, \"model\"):\n                source_dict[\"source\"] = str(source.model)\n            else:\n                source_dict[\"source\"] = str(source)\n        return Source(**source_dict)\n\n    async def message_response(self) -> Message:\n        # First convert the input to string if needed\n        text = self.convert_to_string()\n        # Get source properties\n        source, icon, display_name, source_id = self.get_properties_from_source_component()\n        background_color = self.background_color\n        text_color = self.text_color\n        if self.chat_icon:\n            icon = self.chat_icon\n\n        # Create or use existing Message object\n        if isinstance(self.input_value, Message):\n            message = self.input_value\n            # Update message properties\n            message.text = text\n        else:\n            message = Message(text=text)\n\n        # Set message properties\n        message.sender = self.sender\n        message.sender_name = self.sender_name\n        message.session_id = self.session_id\n        message.flow_id = self.graph.flow_id if hasattr(self, \"graph\") else None\n        message.properties.source = self._build_source(source_id, display_name, source)\n        message.properties.icon = icon\n        message.properties.background_color = background_color\n        message.properties.text_color = text_color\n\n        # Store message if needed\n        if self.session_id and self.should_store_message:\n            stored_message = await self.send_message(message)\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n\n    def _validate_input(self) -> None:\n        \"\"\"Validate the input data and raise ValueError if invalid.\"\"\"\n        if self.input_value is None:\n            msg = \"Input data cannot be None\"\n            raise ValueError(msg)\n        if isinstance(self.input_value, list) and not all(\n            isinstance(item, Message | Data | DataFrame | str) for item in self.input_value\n        ):\n            invalid_types = [\n                type(item).__name__\n                for item in self.input_value\n                if not isinstance(item, Message | Data | DataFrame | str)\n            ]\n            msg = f\"Expected Data or DataFrame or Message or str, got {invalid_types}\"\n            raise TypeError(msg)\n        if not isinstance(\n            self.input_value,\n            Message | Data | DataFrame | str | list | Generator | type(None),\n        ):\n            type_name = type(self.input_value).__name__\n            msg = f\"Expected Data or DataFrame or Message or str, Generator or None, got {type_name}\"\n            raise TypeError(msg)\n\n    def _safe_convert(self, data: Any) -> str:\n        \"\"\"Safely convert input data to string.\"\"\"\n        try:\n            if isinstance(data, str):\n                return data\n            if isinstance(data, Message):\n                return data.get_text()\n            if isinstance(data, Data):\n                if data.get_text() is None:\n                    msg = \"Empty Data object\"\n                    raise ValueError(msg)\n                return data.get_text()\n            if isinstance(data, DataFrame):\n                if self.clean_data:\n                    # Remove empty rows\n                    data = data.dropna(how=\"all\")\n                    # Remove empty lines in each cell\n                    data = data.replace(r\"^\\s*$\", \"\", regex=True)\n                    # Replace multiple newlines with a single newline\n                    data = data.replace(r\"\\n+\", \"\\n\", regex=True)\n\n                # Replace pipe characters to avoid markdown table issues\n                processed_data = data.replace(r\"\\|\", r\"\\\\|\", regex=True)\n\n                processed_data = processed_data.map(\n                    lambda x: str(x).replace(\"\\n\", \"<br/>\") if isinstance(x, str) else x\n                )\n\n                return processed_data.to_markdown(index=False)\n            return str(data)\n        except (ValueError, TypeError, AttributeError) as e:\n            msg = f\"Error converting data: {e!s}\"\n            raise ValueError(msg) from e\n\n    def convert_to_string(self) -> str | Generator[Any, None, None]:\n        \"\"\"Convert input data to string with proper error handling.\"\"\"\n        self._validate_input()\n        if isinstance(self.input_value, list):\n            return \"\\n\".join([self._safe_convert(item) for item in self.input_value])\n        if isinstance(self.input_value, Generator):\n            return self.input_value\n        return self._safe_convert(self.input_value)\n"
+              },
+              "data_template": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Data Template",
+                "dynamic": false,
+                "info": "Template to convert Data to Text. If left empty, it will be dynamically set to the Data's text key.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "data_template",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "{text}"
+              },
+              "input_value": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Text",
+                "dynamic": false,
+                "info": "Message to be passed as output.",
+                "input_types": [
+                  "Data",
+                  "DataFrame",
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "input_value",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "sender": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Sender Type",
+                "dynamic": false,
+                "info": "Type of sender.",
+                "name": "sender",
+                "options": [
+                  "Machine",
+                  "User"
+                ],
+                "options_metadata": [],
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "Machine"
+              },
+              "sender_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender Name",
+                "dynamic": false,
+                "info": "Name of the sender.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "AI"
+              },
+              "session_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Session ID",
+                "dynamic": false,
+                "info": "The session ID of the chat. If empty, the current session ID parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "session_id",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "should_store_message": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Store Messages",
+                "dynamic": false,
+                "info": "Store the message in the history.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "should_store_message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "text_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Text Color",
+                "dynamic": false,
+                "info": "The text color of the name",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "text_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": false,
+          "type": "ChatOutput"
+        },
+        "dragging": false,
+        "id": "ChatOutput-dQC1H",
+        "measured": {
+          "height": 48,
+          "width": 192
+        },
+        "position": {
+          "x": 1522.9257158583848,
+          "y": -123.35001817829894
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "ChatOutput-my9jx",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Display a chat message in the Playground.",
+            "display_name": "Chat Output",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value",
+              "should_store_message",
+              "sender",
+              "sender_name",
+              "session_id",
+              "data_template",
+              "background_color",
+              "chat_icon",
+              "text_color",
+              "clean_data"
+            ],
+            "frozen": false,
+            "icon": "MessagesSquare",
+            "legacy": false,
+            "lf_version": "1.4.2",
+            "metadata": {},
+            "minimized": true,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "method": "message_response",
+                "name": "message",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "background_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Background Color",
+                "dynamic": false,
+                "info": "The background color of the icon.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "background_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "chat_icon": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Icon",
+                "dynamic": false,
+                "info": "The icon of the message.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "chat_icon",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "clean_data": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Basic Clean Data",
+                "dynamic": false,
+                "info": "Whether to clean the data",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "clean_data",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from collections.abc import Generator\nfrom typing import Any\n\nfrom langflow.base.io.chat import ChatComponent\nfrom langflow.inputs import BoolInput\nfrom langflow.inputs.inputs import HandleInput\nfrom langflow.io import DropdownInput, MessageTextInput, Output\nfrom langflow.schema.data import Data\nfrom langflow.schema.dataframe import DataFrame\nfrom langflow.schema.message import Message\nfrom langflow.schema.properties import Source\nfrom langflow.utils.constants import (\n    MESSAGE_SENDER_AI,\n    MESSAGE_SENDER_NAME_AI,\n    MESSAGE_SENDER_USER,\n)\n\n\nclass ChatOutput(ChatComponent):\n    display_name = \"Chat Output\"\n    description = \"Display a chat message in the Playground.\"\n    icon = \"MessagesSquare\"\n    name = \"ChatOutput\"\n    minimized = True\n\n    inputs = [\n        HandleInput(\n            name=\"input_value\",\n            display_name=\"Text\",\n            info=\"Message to be passed as output.\",\n            input_types=[\"Data\", \"DataFrame\", \"Message\"],\n            required=True,\n        ),\n        BoolInput(\n            name=\"should_store_message\",\n            display_name=\"Store Messages\",\n            info=\"Store the message in the history.\",\n            value=True,\n            advanced=True,\n        ),\n        DropdownInput(\n            name=\"sender\",\n            display_name=\"Sender Type\",\n            options=[MESSAGE_SENDER_AI, MESSAGE_SENDER_USER],\n            value=MESSAGE_SENDER_AI,\n            advanced=True,\n            info=\"Type of sender.\",\n        ),\n        MessageTextInput(\n            name=\"sender_name\",\n            display_name=\"Sender Name\",\n            info=\"Name of the sender.\",\n            value=MESSAGE_SENDER_NAME_AI,\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"session_id\",\n            display_name=\"Session ID\",\n            info=\"The session ID of the chat. If empty, the current session ID parameter will be used.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"data_template\",\n            display_name=\"Data Template\",\n            value=\"{text}\",\n            advanced=True,\n            info=\"Template to convert Data to Text. If left empty, it will be dynamically set to the Data's text key.\",\n        ),\n        MessageTextInput(\n            name=\"background_color\",\n            display_name=\"Background Color\",\n            info=\"The background color of the icon.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"chat_icon\",\n            display_name=\"Icon\",\n            info=\"The icon of the message.\",\n            advanced=True,\n        ),\n        MessageTextInput(\n            name=\"text_color\",\n            display_name=\"Text Color\",\n            info=\"The text color of the name\",\n            advanced=True,\n        ),\n        BoolInput(\n            name=\"clean_data\",\n            display_name=\"Basic Clean Data\",\n            value=True,\n            info=\"Whether to clean the data\",\n            advanced=True,\n        ),\n    ]\n    outputs = [\n        Output(\n            display_name=\"Message\",\n            name=\"message\",\n            method=\"message_response\",\n        ),\n    ]\n\n    def _build_source(self, id_: str | None, display_name: str | None, source: str | None) -> Source:\n        source_dict = {}\n        if id_:\n            source_dict[\"id\"] = id_\n        if display_name:\n            source_dict[\"display_name\"] = display_name\n        if source:\n            # Handle case where source is a ChatOpenAI object\n            if hasattr(source, \"model_name\"):\n                source_dict[\"source\"] = source.model_name\n            elif hasattr(source, \"model\"):\n                source_dict[\"source\"] = str(source.model)\n            else:\n                source_dict[\"source\"] = str(source)\n        return Source(**source_dict)\n\n    async def message_response(self) -> Message:\n        # First convert the input to string if needed\n        text = self.convert_to_string()\n        # Get source properties\n        source, icon, display_name, source_id = self.get_properties_from_source_component()\n        background_color = self.background_color\n        text_color = self.text_color\n        if self.chat_icon:\n            icon = self.chat_icon\n\n        # Create or use existing Message object\n        if isinstance(self.input_value, Message):\n            message = self.input_value\n            # Update message properties\n            message.text = text\n        else:\n            message = Message(text=text)\n\n        # Set message properties\n        message.sender = self.sender\n        message.sender_name = self.sender_name\n        message.session_id = self.session_id\n        message.flow_id = self.graph.flow_id if hasattr(self, \"graph\") else None\n        message.properties.source = self._build_source(source_id, display_name, source)\n        message.properties.icon = icon\n        message.properties.background_color = background_color\n        message.properties.text_color = text_color\n\n        # Store message if needed\n        if self.session_id and self.should_store_message:\n            stored_message = await self.send_message(message)\n            self.message.value = stored_message\n            message = stored_message\n\n        self.status = message\n        return message\n\n    def _validate_input(self) -> None:\n        \"\"\"Validate the input data and raise ValueError if invalid.\"\"\"\n        if self.input_value is None:\n            msg = \"Input data cannot be None\"\n            raise ValueError(msg)\n        if isinstance(self.input_value, list) and not all(\n            isinstance(item, Message | Data | DataFrame | str) for item in self.input_value\n        ):\n            invalid_types = [\n                type(item).__name__\n                for item in self.input_value\n                if not isinstance(item, Message | Data | DataFrame | str)\n            ]\n            msg = f\"Expected Data or DataFrame or Message or str, got {invalid_types}\"\n            raise TypeError(msg)\n        if not isinstance(\n            self.input_value,\n            Message | Data | DataFrame | str | list | Generator | type(None),\n        ):\n            type_name = type(self.input_value).__name__\n            msg = f\"Expected Data or DataFrame or Message or str, Generator or None, got {type_name}\"\n            raise TypeError(msg)\n\n    def _safe_convert(self, data: Any) -> str:\n        \"\"\"Safely convert input data to string.\"\"\"\n        try:\n            if isinstance(data, str):\n                return data\n            if isinstance(data, Message):\n                return data.get_text()\n            if isinstance(data, Data):\n                if data.get_text() is None:\n                    msg = \"Empty Data object\"\n                    raise ValueError(msg)\n                return data.get_text()\n            if isinstance(data, DataFrame):\n                if self.clean_data:\n                    # Remove empty rows\n                    data = data.dropna(how=\"all\")\n                    # Remove empty lines in each cell\n                    data = data.replace(r\"^\\s*$\", \"\", regex=True)\n                    # Replace multiple newlines with a single newline\n                    data = data.replace(r\"\\n+\", \"\\n\", regex=True)\n\n                # Replace pipe characters to avoid markdown table issues\n                processed_data = data.replace(r\"\\|\", r\"\\\\|\", regex=True)\n\n                processed_data = processed_data.map(\n                    lambda x: str(x).replace(\"\\n\", \"<br/>\") if isinstance(x, str) else x\n                )\n\n                return processed_data.to_markdown(index=False)\n            return str(data)\n        except (ValueError, TypeError, AttributeError) as e:\n            msg = f\"Error converting data: {e!s}\"\n            raise ValueError(msg) from e\n\n    def convert_to_string(self) -> str | Generator[Any, None, None]:\n        \"\"\"Convert input data to string with proper error handling.\"\"\"\n        self._validate_input()\n        if isinstance(self.input_value, list):\n            return \"\\n\".join([self._safe_convert(item) for item in self.input_value])\n        if isinstance(self.input_value, Generator):\n            return self.input_value\n        return self._safe_convert(self.input_value)\n"
+              },
+              "data_template": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Data Template",
+                "dynamic": false,
+                "info": "Template to convert Data to Text. If left empty, it will be dynamically set to the Data's text key.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "data_template",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "{text}"
+              },
+              "input_value": {
+                "_input_type": "HandleInput",
+                "advanced": false,
+                "display_name": "Text",
+                "dynamic": false,
+                "info": "Message to be passed as output.",
+                "input_types": [
+                  "Data",
+                  "DataFrame",
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "input_value",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "trace_as_metadata": true,
+                "type": "other",
+                "value": ""
+              },
+              "sender": {
+                "_input_type": "DropdownInput",
+                "advanced": true,
+                "combobox": false,
+                "dialog_inputs": {},
+                "display_name": "Sender Type",
+                "dynamic": false,
+                "info": "Type of sender.",
+                "name": "sender",
+                "options": [
+                  "Machine",
+                  "User"
+                ],
+                "options_metadata": [],
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "toggle": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "Machine"
+              },
+              "sender_name": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Sender Name",
+                "dynamic": false,
+                "info": "Name of the sender.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "sender_name",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "AI"
+              },
+              "session_id": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Session ID",
+                "dynamic": false,
+                "info": "The session ID of the chat. If empty, the current session ID parameter will be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "session_id",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              },
+              "should_store_message": {
+                "_input_type": "BoolInput",
+                "advanced": true,
+                "display_name": "Store Messages",
+                "dynamic": false,
+                "info": "Store the message in the history.",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "should_store_message",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "bool",
+                "value": true
+              },
+              "text_color": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Text Color",
+                "dynamic": false,
+                "info": "The text color of the name",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "text_color",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": false,
+          "type": "ChatOutput"
+        },
+        "dragging": false,
+        "id": "ChatOutput-my9jx",
+        "measured": {
+          "height": 48,
+          "width": 192
+        },
+        "position": {
+          "x": 1511.166800152742,
+          "y": -292.28592529557193
+        },
+        "selected": false,
+        "type": "genericNode"
+      }
+    ],
+    "viewport": {
+      "x": 495.62307332570566,
+      "y": 345.7781840070899,
+      "zoom": 0.650924406649598
+    }
+  },
+  "description": "Pipeline for Natural Language to SQL on HPE Private Cloud AI",
+  "endpoint_name": null,
+  "id": "2e63f82f-06f6-4e7d-af88-9e8d068e9436",
+  "is_component": false,
+  "last_tested_version": "1.4.2",
+  "name": "NL2SQL_Pipeline_2026",
+  "tags": []
+}
